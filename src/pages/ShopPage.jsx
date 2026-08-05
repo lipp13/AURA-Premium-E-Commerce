@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
 import { categories } from '../data/categories';
-import { brands } from '../data/brands';
 import { ProductGrid } from '../components/product/ProductGrid';
 import { Pagination } from '../components/common/Pagination';
 import { Breadcrumb } from '../components/common/Breadcrumb';
@@ -20,7 +19,6 @@ export const ShopPage = () => {
   // Filters State
   const initialCategory = searchParams.get('category') || 'all';
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [selectedBrand, setSelectedBrand] = useState('all');
   const [priceRange, setPriceRange] = useState(4000);
   const [minRating, setMinRating] = useState(0);
   const [inStockOnly, setInStockOnly] = useState(false);
@@ -47,8 +45,6 @@ export const ShopPage = () => {
         const catObj = categories.find(c => c.id === selectedCategory);
         if (catObj && p.category.toLowerCase() !== catObj.name.toLowerCase()) return false;
       }
-      // Brand Filter
-      if (selectedBrand !== 'all' && p.brand.toLowerCase() !== selectedBrand.toLowerCase()) return false;
       // Price Filter
       if (p.price > priceRange) return false;
       // Rating Filter
@@ -66,7 +62,7 @@ export const ShopPage = () => {
       if (sortBy === 'newest') return b.id - a.id;
       return b.soldCount - a.soldCount; // Popularity
     });
-  }, [selectedCategory, selectedBrand, priceRange, minRating, inStockOnly, onSaleOnly, sortBy]);
+  }, [selectedCategory, priceRange, minRating, inStockOnly, onSaleOnly, sortBy]);
 
   // Pagination slicing
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -77,7 +73,6 @@ export const ShopPage = () => {
 
   const handleResetFilters = () => {
     setSelectedCategory('all');
-    setSelectedBrand('all');
     setPriceRange(4000);
     setMinRating(0);
     setInStockOnly(false);
@@ -88,7 +83,6 @@ export const ShopPage = () => {
   };
 
   const activeFilterCount = (selectedCategory !== 'all' ? 1 : 0) +
-    (selectedBrand !== 'all' ? 1 : 0) +
     (priceRange < 4000 ? 1 : 0) +
     (minRating > 0 ? 1 : 0) +
     (inStockOnly ? 1 : 0) +
@@ -229,23 +223,6 @@ export const ShopPage = () => {
             />
           </div>
 
-          {/* Brand Filter */}
-          <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2">
-              Brand
-            </label>
-            <select
-              value={selectedBrand}
-              onChange={(e) => { setSelectedBrand(e.target.value); setCurrentPage(1); }}
-              className="w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none"
-            >
-              <option value="all">All Brands</option>
-              {brands.map(b => (
-                <option key={b.id} value={b.name}>{b.name}</option>
-              ))}
-            </select>
-          </div>
-
           {/* Minimum Rating */}
           <div>
             <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2">
@@ -303,12 +280,6 @@ export const ShopPage = () => {
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-xs font-medium">
                   Cat: {selectedCategory}
                   <X className="w-3 h-3 cursor-pointer" onClick={() => setSelectedCategory('all')} />
-                </span>
-              )}
-              {selectedBrand !== 'all' && (
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-xs font-medium">
-                  Brand: {selectedBrand}
-                  <X className="w-3 h-3 cursor-pointer" onClick={() => setSelectedBrand('all')} />
                 </span>
               )}
               {priceRange < 4000 && (
