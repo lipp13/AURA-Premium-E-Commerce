@@ -63,7 +63,7 @@ export const Footer = () => {
           </p>
           <div className="pt-2 text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5 font-medium">
             <Code2 className="w-3.5 h-3.5 text-neutral-700 dark:text-neutral-300" />
-            <span>Designed & Developed with ❤️ by <a href="https://github.com/lipp13" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-900 dark:text-white underline hover:opacity-80 transition-opacity">Alif Alfathar</a></span>
+            <span>Designed & Developed with by <a href="https://github.com/lipp13" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-900 dark:text-white underline hover:opacity-80 transition-opacity">Alif Alfathar</a></span>
           </div>
         </div>
 

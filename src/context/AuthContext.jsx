@@ -19,6 +19,27 @@ const DEFAULT_USERS = [
   }
 ];
 
+const DEFAULT_ORDERS = [
+  {
+    id: 'AU-849201',
+    date: 'August 02, 2026',
+    total: 349,
+    status: 'In Transit',
+    items: ['AURA Sound Studio Pro Headphones (1x)'],
+    tracking: 'UPS 1Z9999999999999999',
+    userEmail: 'alex.vance@aura.design'
+  },
+  {
+    id: 'AU-710293',
+    date: 'July 18, 2026',
+    total: 850,
+    status: 'Delivered',
+    items: ['AURA Ergonomic Task Chair (1x)'],
+    tracking: 'FedEx 7820192019',
+    userEmail: 'alex.vance@aura.design'
+  }
+];
+
 export const AuthProvider = ({ children }) => {
   const { addToast } = useToast();
 
@@ -48,6 +69,19 @@ export const AuthProvider = ({ children }) => {
     return null;
   });
 
+  // Load order history from localStorage
+  const [orders, setOrders] = useState(() => {
+    const savedOrders = localStorage.getItem('aura_orders');
+    if (savedOrders) {
+      try {
+        return JSON.parse(savedOrders);
+      } catch (e) {
+        console.error('Error parsing stored orders:', e);
+      }
+    }
+    return DEFAULT_ORDERS;
+  });
+
   // Auth modal state
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState('login'); // 'login' | 'register'
@@ -65,6 +99,11 @@ export const AuthProvider = ({ children }) => {
       localStorage.removeItem('aura_current_user');
     }
   }, [currentUser]);
+
+  // Sync orders to localStorage
+  useEffect(() => {
+    localStorage.setItem('aura_orders', JSON.stringify(orders));
+  }, [orders]);
 
   const openAuthModal = (mode = 'login') => {
     setAuthModalMode(mode);
@@ -160,11 +199,37 @@ export const AuthProvider = ({ children }) => {
     return { success: true };
   };
 
+  const addOrder = (orderData) => {
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('en-US', {
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric'
+    });
+
+    const newOrder = {
+      id: `AU-${Math.floor(100000 + Math.random() * 900000)}`,
+      date: formattedDate,
+      total: orderData.total,
+      status: 'Processing',
+      items: orderData.items || [],
+      tracking: `UPS 1Z${Math.floor(1000000000000000 + Math.random() * 9000000000000000)}`,
+      userEmail: (orderData.userEmail || currentUser?.email || 'guest@aura.design').toLowerCase(),
+      shipping: orderData.shippingData,
+      paymentMethod: orderData.paymentMethod
+    };
+
+    setOrders((prev) => [newOrder, ...prev]);
+    addToast(`Pesanan #${newOrder.id} telah berhasil dibuat!`, 'success');
+    return newOrder;
+  };
+
   return (
     <AuthContext.Provider
       value={{
         currentUser,
         users,
+        orders,
         isAuthenticated: !!currentUser,
         isAuthModalOpen,
         authModalMode,
@@ -174,7 +239,8 @@ export const AuthProvider = ({ children }) => {
         register,
         logout,
         updateProfile,
-        updatePassword
+        updatePassword,
+        addOrder
       }}
     >
       {children}

@@ -7,10 +7,17 @@ import { useToast } from '../context/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
 export const DashboardPage = () => {
-  const { currentUser, isAuthenticated, logout, updateProfile, updatePassword, openAuthModal } = useAuth();
+  const { currentUser, isAuthenticated, logout, updateProfile, updatePassword, openAuthModal, orders } = useAuth();
   const { addToast } = useToast();
 
   const [tab, setTab] = useState('orders'); // 'orders' | 'profile' | 'addresses' | 'notifications' | 'settings'
+
+  // Filter orders belonging to the current user (or demo user)
+  const userOrders = orders.filter(
+    (o) =>
+      o.userEmail?.toLowerCase() === (currentUser?.email || '').toLowerCase() ||
+      currentUser?.email === 'alex.vance@aura.design'
+  );
 
   // Profile Form State
   const [profileName, setProfileName] = useState(currentUser?.name || '');
@@ -75,25 +82,6 @@ export const DashboardPage = () => {
       setNewPassword('');
     }
   };
-
-  const dummyOrders = [
-    {
-      id: 'AU-849201',
-      date: 'August 02, 2026',
-      total: 349,
-      status: 'In Transit',
-      items: ['AURA Sound Studio Pro Headphones'],
-      tracking: 'UPS 1Z9999999999999999'
-    },
-    {
-      id: 'AU-710293',
-      date: 'July 18, 2026',
-      total: 850,
-      status: 'Delivered',
-      items: ['AURA Ergonomic Task Chair'],
-      tracking: 'FedEx 7820192019'
-    }
-  ];
 
   // If user is not logged in (Guest State)
   if (!isAuthenticated) {
@@ -186,44 +174,55 @@ export const DashboardPage = () => {
           {tab === 'orders' && (
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
-                Pesanan Aktif & Riwayat
+                Pesanan Aktif & Riwayat ({userOrders.length})
               </h3>
-              {dummyOrders.map((order) => (
-                <div
-                  key={order.id}
-                  className="p-6 rounded-3xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 space-y-4 shadow-apple-sm"
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4 text-xs">
-                    <div>
-                      <span className="font-mono font-bold text-neutral-900 dark:text-white text-sm">
-                        {order.id}
+              {userOrders.length > 0 ? (
+                userOrders.map((order) => (
+                  <div
+                    key={order.id}
+                    className="p-6 rounded-3xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 space-y-4 shadow-apple-sm"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4 text-xs">
+                      <div>
+                        <span className="font-mono font-bold text-neutral-900 dark:text-white text-sm">
+                          #{order.id}
+                        </span>
+                        <span className="text-neutral-400 ml-3">Dipesan pada {order.date}</span>
+                      </div>
+                      <span
+                        className={`px-3 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] ${
+                          order.status === 'Processing'
+                            ? 'bg-blue-500/10 text-blue-500'
+                            : order.status === 'In Transit'
+                            ? 'bg-amber-500/10 text-amber-500'
+                            : 'bg-emerald-500/10 text-emerald-500'
+                        }`}
+                      >
+                        {order.status}
                       </span>
-                      <span className="text-neutral-400 ml-3">Dipesan pada {order.date}</span>
                     </div>
-                    <span
-                      className={`px-3 py-1 rounded-full font-bold uppercase tracking-wider ${
-                        order.status === 'In Transit'
-                          ? 'bg-amber-500/10 text-amber-500'
-                          : 'bg-emerald-500/10 text-emerald-500'
-                      }`}
-                    >
-                      {order.status}
-                    </span>
-                  </div>
 
-                  <div className="flex justify-between items-center text-sm">
-                    <div>
-                      <p className="font-semibold text-neutral-900 dark:text-white">
-                        {order.items.join(', ')}
-                      </p>
-                      <p className="text-xs text-neutral-400 mt-0.5">
-                        Nomor Resi: {order.tracking}
-                      </p>
+                    <div className="flex justify-between items-center text-sm">
+                      <div className="space-y-1">
+                        <p className="font-semibold text-neutral-900 dark:text-white">
+                          {Array.isArray(order.items) ? order.items.join(', ') : order.items}
+                        </p>
+                        <p className="text-xs text-neutral-400">
+                          Nomor Resi: <code className="font-mono text-neutral-700 dark:text-neutral-300 font-bold">{order.tracking}</code>
+                        </p>
+                      </div>
+                      <span className="text-lg font-bold text-neutral-900 dark:text-white">${order.total}</span>
                     </div>
-                    <span className="text-lg font-bold">${order.total}</span>
                   </div>
+                ))
+              ) : (
+                <div className="p-8 rounded-3xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-center space-y-3">
+                  <p className="text-sm text-neutral-500">Belum ada riwayat pesanan.</p>
+                  <Button size="sm" onClick={() => window.location.href = '/shop'}>
+                    Mulai Belanja Sekarang
+                  </Button>
                 </div>
-              ))}
+              )}
             </div>
           )}
 

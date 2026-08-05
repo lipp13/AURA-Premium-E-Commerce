@@ -10,10 +10,11 @@ import confetti from 'canvas-confetti';
 
 export const CheckoutPage = () => {
   const { cart, grandTotal, clearCart } = useCart();
-  const { currentUser, isAuthenticated, openAuthModal } = useAuth();
+  const { currentUser, isAuthenticated, openAuthModal, addOrder } = useAuth();
   const navigate = useNavigate();
 
   const [step, setStep] = useState(1); // 1: Shipping, 2: Payment, 3: Review, 4: Success
+  const [completedOrder, setCompletedOrder] = useState(null);
 
   // Form State
   const [shippingData, setShippingData] = useState({
@@ -53,6 +54,18 @@ export const CheckoutPage = () => {
   };
 
   const handlePlaceOrder = () => {
+    const itemSummaries = cart.map(item => `${item.product.title} (${item.quantity}x)`);
+
+    const createdOrder = addOrder({
+      total: grandTotal,
+      items: itemSummaries,
+      userEmail: shippingData.email,
+      shippingData: shippingData,
+      paymentMethod: paymentMethod,
+    });
+
+    setCompletedOrder(createdOrder);
+
     // Trigger celebration confetti blast!
     try {
       confetti({
@@ -244,7 +257,7 @@ export const CheckoutPage = () => {
           </h2>
 
           <p className="text-sm text-neutral-500 max-w-md mx-auto leading-relaxed">
-            Thank you for purchasing with AURA. Your order confirmation <span className="font-mono text-neutral-900 dark:text-white font-bold">#AU-{Math.floor(100000 + Math.random() * 900000)}</span> has been sent to {shippingData.email}.
+            Thank you for purchasing with AURA. Your order confirmation <span className="font-mono text-neutral-900 dark:text-white font-bold">#{completedOrder?.id || 'AU-982104'}</span> has been sent to {shippingData.email}.
           </p>
 
           <div className="p-4 rounded-2xl bg-white dark:bg-neutral-800 text-xs text-neutral-500 space-y-1">
