@@ -53,6 +53,11 @@ export const ProductCard = ({ product, onQuickView, layout = 'grid' }) => {
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             onLoad={() => setImageLoaded(true)}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80';
+              setImageLoaded(true);
+            }}
           />
           {product.isFlashSale && (
             <div className="absolute top-3 left-3">
@@ -166,6 +171,11 @@ export const ProductCard = ({ product, onQuickView, layout = 'grid' }) => {
             alt={product.title}
             className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500 rounded-2xl"
             onLoad={() => setImageLoaded(true)}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80';
+              setImageLoaded(true);
+            }}
           />
         </Link>
 

@@ -1,4 +1,4 @@
-// 160 Real Original Brand Products across 20 Categories with 0 Repeated Images & 0 Broken Links
+// 480 Real Original Brand Products Across 20 Categories (24 products per category)
 
 const categorySlugMap = {
   'Electronics': 'electronics',
@@ -23,801 +23,6 @@ const categorySlugMap = {
   'Toys': 'toys'
 };
 
-const baseProductsList = [
-  // --- 1. ELECTRONICS ---
-  {
-    id: 1,
-    title: 'Sony WH-1000XM5 Wireless Headphones',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'SONY', price: 398, oldPrice: 449, discountPercentage: 11,
-    rating: 4.9, reviewCount: 842, soldCount: 2410, stock: 18,
-    description: 'Industry-leading noise canceling headphones with 8 microphones, Auto NC Optimizer, and 30-hour battery life.',
-    images: [
-      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80',
-      'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80',
-      'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7'], sizes: null,
-    specifications: { Connectivity: 'Bluetooth 5.2', Battery: '30 Hours', Driver: '30mm Carbon Fiber', Weight: '250g' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 2,
-    title: 'Keychron K2 Wireless Mechanical Keyboard',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'AURA Studio', price: 119, oldPrice: 139, discountPercentage: 14,
-    rating: 4.8, reviewCount: 512, soldCount: 1890, stock: 24,
-    description: '75% compact wireless mechanical keyboard featuring hot-swappable switches, Gateron G Pro mechanical keys, and RGB backlight.',
-    images: [
-      'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80',
-      'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&q=80',
-      'https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&q=80'
-    ],
-    colors: ['#090909', '#86868B'], sizes: null,
-    specifications: { Layout: '75% Compact', Switches: 'Gateron G Pro Brown', Battery: '4000mAh', Frame: 'Aluminium' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 3,
-    title: 'Apple Studio Display 27" 5K Retina',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'AURA Studio', price: 1599, oldPrice: 1799, discountPercentage: 11,
-    rating: 4.9, reviewCount: 310, soldCount: 890, stock: 9,
-    description: '27-inch 5K Retina display with 12MP Ultra Wide camera with Center Stage, studio-quality mics, and six-speaker sound system.',
-    images: [
-      'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80',
-      'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&q=80',
-      'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80'
-    ],
-    colors: ['#E4E4E7'], sizes: null,
-    specifications: { Resolution: '5120 x 2880 Retina', Brightness: '600 Nits', Camera: '12MP Ultra Wide', Ports: 'Thunderbolt 3 x1, USB-C x3' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 4,
-    title: 'Bose QuietComfort Ultra Noise Cancelling Earbuds',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'BOSE', price: 299, oldPrice: 329, discountPercentage: 9,
-    rating: 4.7, reviewCount: 420, soldCount: 1540, stock: 15,
-    description: 'Breakthrough spatialized audio earbuds with CustomTune technology, world-class noise cancellation, and IPX4 rating.',
-    images: [
-      'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80',
-      'https://images.unsplash.com/photo-1572536147248-ac59a8abfa4d?w=800&q=80',
-      'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7'], sizes: null,
-    specifications: { Audio: 'Bose Immersive Spatial Audio', Battery: '6 Hours (24 with Case)', WaterResistance: 'IPX4' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: true
-  },
-  {
-    id: 5,
-    title: 'Anker 3-in-1 Cube MagSafe Charging Station',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'Minimalist Co.', price: 149, oldPrice: 169, discountPercentage: 12,
-    rating: 4.8, reviewCount: 295, soldCount: 1120, stock: 30,
-    description: '15W MagSafe foldable 3-in-1 fast charger for iPhone, Apple Watch, and AirPods with adjustable viewing angle.',
-    images: [
-      'https://images.unsplash.com/photo-1622445268465-8378c6922e49?w=800&q=80',
-      'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80',
-      'https://images.unsplash.com/photo-1609592424074-b52b2f6ef1e4?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Output: '15W MagSafe Certified', Compatibility: 'iPhone 12-15, Apple Watch, AirPods', Cable: '30W Wall Charger Included' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 6,
-    title: 'Apple Magic Trackpad 3 Space Black',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'AURA Studio', price: 149, oldPrice: 169, discountPercentage: 12,
-    rating: 4.9, reviewCount: 680, soldCount: 2890, stock: 12,
-    description: 'Rechargeable wireless glass multi-touch trackpad with Force Touch sensors and edge-to-edge glass surface.',
-    images: [
-      'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80',
-      'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80',
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7'], sizes: null,
-    specifications: { Sensors: 'Force Touch Multi-Touch', Battery: 'Rechargeable Lithium-Ion', Port: 'Woven USB-C to Lightning' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 7,
-    title: 'Belkin BoostCharge Pro 24,000mAh 140W Power Bank',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'Minimalist Co.', price: 129, oldPrice: 149, discountPercentage: 13,
-    rating: 4.7, reviewCount: 180, soldCount: 760, stock: 22,
-    description: '140W multi-device power bank with color digital display, dual USB-C PD ports, and rapid recharge capability.',
-    images: [
-      'https://images.unsplash.com/photo-1609592424074-b52b2f6ef1e4?w=800&q=80',
-      'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80',
-      'https://images.unsplash.com/photo-1622445268465-8378c6922e49?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Capacity: '24,000mAh / 86.4Wh', MaxOutput: '140W Total PD 3.1', Display: 'Smart Color Status Screen' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 8,
-    title: 'Audioquest DragonFly Cobalt USB Audiophile DAC',
-    category: 'Electronics', categorySlug: 'electronics',
-    brand: 'Bang & Olufsen', price: 329, oldPrice: 359, discountPercentage: 8,
-    rating: 4.9, reviewCount: 210, soldCount: 490, stock: 8,
-    description: 'Compact USB digital-to-analog converter and headphone amplifier with ESS ES9038Q2M chip for master-quality audio.',
-    images: [
-      'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80',
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80',
-      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80'
-    ],
-    colors: ['#1D4ED8'], sizes: null,
-    specifications: { DACChip: 'ESS ES9038Q2M Sabre', Resolution: '24-bit / 96kHz MQA', Output: '2.1V High Drive' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 2. FASHION ---
-  {
-    id: 9,
-    title: 'Acne Studios Oversized Heavyweight Cotton Tee',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'Nordic Lab', price: 180, oldPrice: 210, discountPercentage: 14,
-    rating: 4.8, reviewCount: 340, soldCount: 920, stock: 14,
-    description: 'Heavyweight organic cotton jersey T-shirt cut to an oversized boxy silhouette with rib knit crewneck.',
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7', '#86868B'], sizes: ['S', 'M', 'L', 'XL'],
-    specifications: { Material: '100% Organic Cotton 320 GSM', Fit: 'Oversized Boxy', Origin: 'Made in Portugal' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 10,
-    title: 'Burberry Heritage Wool Cashmere Trench Coat',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'Nordic Lab', price: 1250, oldPrice: 1450, discountPercentage: 13,
-    rating: 4.9, reviewCount: 195, soldCount: 380, stock: 5,
-    description: 'Double-breasted trench coat tailored in England from weather-resistant virgin wool and cashmere blend.',
-    images: [
-      'https://images.unsplash.com/photo-1544923246-77307dd654cb?w=800&q=80',
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80'
-    ],
-    colors: ['#D97706', '#090909'], sizes: ['M', 'L', 'XL'],
-    specifications: { Material: '90% Virgin Wool, 10% Cashmere', Lining: 'Vintage Check Cupro', Origin: 'Made in UK' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 11,
-    title: 'Nudie Jeans Lean Dean Japanese Selvage Denim',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'AURA Studio', price: 199, oldPrice: 230, discountPercentage: 13,
-    rating: 4.7, reviewCount: 460, soldCount: 1420, stock: 19,
-    description: 'Slim tapered leg jeans crafted in Sweden from 13.5oz Japanese dry selvage organic cotton denim.',
-    images: [
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80',
-      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80'
-    ],
-    colors: ['#1E3A8A', '#090909'], sizes: ['28', '30', '32', '34'],
-    specifications: { Fabric: '13.5oz Dry Kaihara Selvage Denim', Fit: 'Slim Tapered', Hardware: 'Copper Trims' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 12,
-    title: 'Arc\'teryx Beta LT Waterproof GORE-TEX Jacket',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'Nordic Lab', price: 450, oldPrice: 499, discountPercentage: 10,
-    rating: 4.9, reviewCount: 620, soldCount: 1980, stock: 11,
-    description: 'Lightweight, versatile 3L GORE-TEX jacket providing complete waterproof, windproof, and breathable protection.',
-    images: [
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
-      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&q=80',
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80'
-    ],
-    colors: ['#090909', '#059669', '#2563EB'], sizes: ['S', 'M', 'L', 'XL'],
-    specifications: { Membrane: '3L GORE-TEX with Tricot Technology', Hood: 'StormHood Helmet Compatible', Weight: '395g' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: true
-  },
-  {
-    id: 13,
-    title: 'Uniqlo U Heavyweight Fleece Pullover Hoodie',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'Minimalist Co.', price: 69, oldPrice: 85, discountPercentage: 18,
-    rating: 4.8, reviewCount: 890, soldCount: 3400, stock: 45,
-    description: 'Plush heavyweight cotton fleece sweatshirt with double-layered hood and relaxed armhole construction.',
-    images: [
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=80',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80'
-    ],
-    colors: ['#090909', '#71717A', '#D4D4D8'], sizes: ['S', 'M', 'L', 'XL'],
-    specifications: { Material: '100% Cotton French Terry Fleece', Weight: '400 GSM', Pockets: 'Kangaroo Front Pocket' },
-    isFreeShipping: false, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 14,
-    title: 'A.P.C. Paris Minimalist Grain Leather Belt',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'AURA Studio', price: 135, oldPrice: 150, discountPercentage: 10,
-    rating: 4.7, reviewCount: 230, soldCount: 810, stock: 16,
-    description: 'Classic 3cm width belt handcrafted in France from vegetable-tanned full grain cowhide with square silver buckle.',
-    images: [
-      'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80',
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80',
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80'
-    ],
-    colors: ['#090909', '#78350F'], sizes: ['S', 'M', 'L'],
-    specifications: { Leather: 'Vegetable-Tanned Cowhide', Width: '30 mm', Buckle: 'Polished Nickel Hardware' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 15,
-    title: 'COS Tailored Pleated Wool Trousers',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'Nordic Lab', price: 150, oldPrice: 175, discountPercentage: 14,
-    rating: 4.6, reviewCount: 310, soldCount: 690, stock: 20,
-    description: 'Wide-leg trousers cut from pure RWS wool featuring double front pleats and press creases.',
-    images: [
-      'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80',
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80',
-      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80'
-    ],
-    colors: ['#090909', '#3F3F46'], sizes: ['28', '30', '32', '34'],
-    specifications: { Fabric: '100% Responsible Wool Standard', Closure: 'Concealed Hook & Bar', Rise: 'High Rise' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 16,
-    title: 'AMI Paris Merino Wool Ami de Cœur Knit Sweater',
-    category: 'Fashion', categorySlug: 'fashion',
-    brand: 'Minimalist Co.', price: 385, oldPrice: 440, discountPercentage: 12,
-    rating: 4.9, reviewCount: 410, soldCount: 1150, stock: 8,
-    description: 'Chunky organic Extra Fine Merino wool sweater woven in Italy with signature red embroidery motif at chest.',
-    images: [
-      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80',
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=80',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=80'
-    ],
-    colors: ['#F5F5F7', '#090909'], sizes: ['S', 'M', 'L'],
-    specifications: { Yarn: '100% Organic Extra Fine Merino Wool', Gauge: '7 Gauge Heavyweight', Origin: 'Made in Italy' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 3. GAMING ---
-  {
-    id: 17,
-    title: 'PlayStation 5 DualSense Edge Wireless Controller',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'SONY', price: 199, oldPrice: 229, discountPercentage: 13,
-    rating: 4.9, reviewCount: 940, soldCount: 3100, stock: 25,
-    description: 'High-performance customizable PS5 controller with swappable stick modules, remappable back buttons, and profile presets.',
-    images: [
-      'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80',
-      'https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&q=80',
-      'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80'
-    ],
-    colors: ['#F5F5F7', '#090909'], sizes: null,
-    specifications: { Customization: 'Swappable Stick Caps & Back Buttons', Triggers: 'Adjustable Trigger Stops', Cable: 'Braided USB Lock Cable' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 18,
-    title: 'Logitech G Pro X Superlight 2 Wireless Mouse',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'AURA Studio', price: 159, oldPrice: 179, discountPercentage: 11,
-    rating: 4.9, reviewCount: 1120, soldCount: 4200, stock: 32,
-    description: '60g ultra-lightweight esports gaming mouse with HERO 2 sensor, 32,000 DPI, and LIGHTFORCE hybrid switches.',
-    images: [
-      'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80',
-      'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80',
-      'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7', '#EC4899'], sizes: null,
-    specifications: { Weight: '60g Superlight', Sensor: 'HERO 2 32,000 DPI 500 IPS', Battery: '95 Hours' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 19,
-    title: 'Alienware 34" QD-OLED Curved Gaming Monitor',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'SONY', price: 999, oldPrice: 1199, discountPercentage: 16,
-    rating: 4.8, reviewCount: 480, soldCount: 1120, stock: 7,
-    description: '34-inch 175Hz 0.1ms QD-OLED 1800R curved gaming screen featuring Nvidia G-Sync Ultimate and Quantum Dot color accuracy.',
-    images: [
-      'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-      'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80',
-      'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Display: '34" WQHD QD-OLED 175Hz', Response: '0.1ms Gray-to-Gray', Curvature: '1800R' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: true
-  },
-  {
-    id: 20,
-    title: 'SteelSeries Arctis Nova Pro Wireless Headset',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'BOSE', price: 349, oldPrice: 379, discountPercentage: 8,
-    rating: 4.8, reviewCount: 650, soldCount: 1890, stock: 16,
-    description: 'Multi-system dual wireless gaming headset with Active Noise Cancellation, Infinity Power hot-swappable batteries, and GameDAC Gen 2.',
-    images: [
-      'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80',
-      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80',
-      'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Audio: 'Hi-Res Certified Neodymium Drivers', ANC: 'Four-mic Hybrid Active Noise Cancellation', System: 'Dual USB-C Connection' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 21,
-    title: 'Elgato Wave:3 Premium USB Condenser Microphone',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'SONY', price: 149, oldPrice: 169, discountPercentage: 12,
-    rating: 4.8, reviewCount: 780, soldCount: 2600, stock: 21,
-    description: 'Broadcast-grade cardioid condenser USB microphone with anti-distortion Clipguard tech and 24-bit/96kHz digital mixer.',
-    images: [
-      'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80',
-      'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80',
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7'], sizes: null,
-    specifications: { Capsule: '17mm Electret Condenser', Resolution: '24-bit / 96kHz', Technology: 'Clipguard Anti-Distortion' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 22,
-    title: 'Razer BlackWidow V4 Pro Mechanical Gaming Keyboard',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'AURA Studio', price: 229, oldPrice: 259, discountPercentage: 11,
-    rating: 4.7, reviewCount: 390, soldCount: 1240, stock: 17,
-    description: 'Full-size mechanical keyboard featuring Razer Command Dial, 8 dedicated macro keys, magnetic plush wrist rest, and Chroma RGB.',
-    images: [
-      'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80',
-      'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&q=80',
-      'https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Switches: 'Razer Green Clicky or Yellow Linear', PollingRate: '8000Hz HyperPolling', Dial: 'Multi-Function Command Dial' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 23,
-    title: 'Philips Hue Play RGB Gaming Ambient Light Bar Duo',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'AURA Studio', price: 159, oldPrice: 179, discountPercentage: 11,
-    rating: 4.9, reviewCount: 520, soldCount: 1980, stock: 14,
-    description: 'Set of 2 smart RGB light bars designed to sync with PC/console screen colors for an immersive gaming atmosphere.',
-    images: [
-      'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-      'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
-      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Spectrum: '16 Million RGB Colors', Output: '530 Lumens Each', Integration: 'Hue Sync & Razer Chroma Compatible' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 24,
-    title: 'Xbox Elite Wireless Controller Series 2',
-    category: 'Gaming', categorySlug: 'gaming',
-    brand: 'SONY', price: 179, oldPrice: 199, discountPercentage: 10,
-    rating: 4.8, reviewCount: 810, soldCount: 2950, stock: 20,
-    description: 'Pro controller with adjustable-tension thumbsticks, wrap-around rubberized grip, and up to 40 hours of battery life.',
-    images: [
-      'https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800&q=80',
-      'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80',
-      'https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&q=80'
-    ],
-    colors: ['#F5F5F7', '#090909'], sizes: null,
-    specifications: { Battery: '40 Hours Internal Rechargeable', Thumbsticks: 'Adjustable Tension', CarryingCase: 'Included Docking Case' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 4. FURNITURE ---
-  {
-    id: 25,
-    title: 'Herman Miller Aeron Ergonomic Office Chair',
-    category: 'Furniture', categorySlug: 'furniture',
-    brand: 'Herman Miller', price: 1295, oldPrice: 1495, discountPercentage: 13,
-    rating: 5.0, reviewCount: 1420, soldCount: 4500, stock: 10,
-    description: 'The pinnacle of ergonomic seating. Features Pellicle 8Z breathable suspension mesh, PostureFit SL back support, and 12-year warranty.',
-    images: [
-      'https://images.unsplash.com/photo-1580481072645-022f9a6d85d0?w=800&q=80',
-      'https://images.unsplash.com/photo-1505797149-43b0069ec26b?w=800&q=80',
-      'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80'
-    ],
-    colors: ['#090909', '#71717A'], sizes: null,
-    specifications: { Mesh: '8Z Pellicle Elastomer', Lumbar: 'PostureFit SL Support', Warranty: '12-Year Herman Miller Warranty' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 26,
-    title: 'Nordic Solid European Oak Writing Desk 160cm',
-    category: 'Furniture', categorySlug: 'furniture',
-    brand: 'Nordic Lab', price: 790, oldPrice: 890, discountPercentage: 11,
-    rating: 4.8, reviewCount: 390, soldCount: 980, stock: 8,
-    description: 'Handcrafted solid European white oak desk with soft-close drawers and integrated under-desk magnetic cable tray.',
-    images: [
-      'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80',
-      'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80'
-    ],
-    colors: ['#D97706'], sizes: null,
-    specifications: { Wood: '100% Solid European Oak', Dimensions: '160 x 80 x 75 cm', Finish: 'Natural Matte Organic Oil' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 27,
-    title: 'Fritz Hansen Egg Lounge Chair in Aniline Leather',
-    category: 'Furniture', categorySlug: 'furniture',
-    brand: 'Herman Miller', price: 3200, oldPrice: 3600, discountPercentage: 11,
-    rating: 4.9, reviewCount: 110, soldCount: 230, stock: 3,
-    description: 'Arne Jacobsen design icon. Sculptural shell upholstered in hand-stitched premium cognac aniline leather with star swivel base.',
-    images: [
-      'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80'
-    ],
-    colors: ['#78350F', '#090909'], sizes: null,
-    specifications: { Upholstery: 'Grace Aniline Leather', Base: 'Satin Polished Aluminium', Origin: 'Handmade in Denmark' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-  {
-    id: 28,
-    title: 'Muuto Stacked Modular Oak Bookshelf System',
-    category: 'Furniture', categorySlug: 'furniture',
-    brand: 'Minimalist Co.', price: 650, oldPrice: 720, discountPercentage: 10,
-    rating: 4.7, reviewCount: 280, soldCount: 640, stock: 12,
-    description: 'Versatile Scandinavian modular bookshelf constructed from white oak veneered MDF modules connected by steel clips.',
-    images: [
-      'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80',
-      'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80',
-      'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80'
-    ],
-    colors: ['#D4D4D8', '#090909'], sizes: null,
-    specifications: { Modules: 'Set of 5 Interlocking Boxes', Material: 'Oak Veneer & Powder-Coated Steel Clips' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 5. FOOD & BEVERAGE ---
-  {
-    id: 29,
-    title: 'Blue Bottle Ethiopian Yirgacheffe Whole Beans 500g',
-    category: 'Food & Beverage', categorySlug: 'food-beverage',
-    brand: 'Minimalist Co.', price: 32, oldPrice: 38, discountPercentage: 15,
-    rating: 4.9, reviewCount: 610, soldCount: 2100, stock: 50,
-    description: 'Light roast single-origin specialty arabica coffee beans with aromatic notes of bergamot, candied lemon, and jasmine.',
-    images: [
-      'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80',
-      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80',
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { Origin: 'Yirgacheffe, Ethiopia', Process: 'Washed', Weight: '500g Whole Beans' },
-    isFreeShipping: false, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 30,
-    title: 'Ippodo Tea Ceremonial Grade Uji Matcha 100g',
-    category: 'Food & Beverage', categorySlug: 'food-beverage',
-    brand: 'Minimalist Co.', price: 48, oldPrice: 56, discountPercentage: 14,
-    rating: 5.0, reviewCount: 480, soldCount: 1650, stock: 35,
-    description: 'First harvest ceremonial matcha stone-ground in Kyoto, Japan. Vibrant green color with rich umami and zero astringency.',
-    images: [
-      'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&q=80',
-      'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80',
-      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { Grade: 'Umami-Rich Ceremonial', Harvest: 'First Spring Pick', NetWeight: '100g Nitrogen Sealed Tin' },
-    isFreeShipping: false, isBestseller: true, isNewArrival: true, isFlashSale: false
-  },
-
-  // --- 6. HOME DECORATION ---
-  {
-    id: 31,
-    title: 'Muuto Kink Ceramic Sculptural Matte Vase',
-    category: 'Home Decoration', categorySlug: 'home-decoration',
-    brand: 'AURA Studio', price: 125, oldPrice: 145, discountPercentage: 14,
-    rating: 4.8, reviewCount: 290, soldCount: 870, stock: 18,
-    description: 'Dual-opening pigmented porcelain vase created using contemporary digital manipulation of traditional ceramic craft.',
-    images: [
-      'https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?w=800&q=80',
-      'https://images.unsplash.com/photo-1581783342308-f792dbdd77c5?w=800&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80'
-    ],
-    colors: ['#F5F5F7', '#EC4899', '#71717A'], sizes: null,
-    specifications: { Material: 'Pigmented Glazed Porcelain', Height: '26.3 cm', Design: 'Earnest Studio for Muuto' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 32,
-    title: 'Flos Snoopy Architectural Table Lamp',
-    category: 'Home Decoration', categorySlug: 'home-decoration',
-    brand: 'Nordic Lab', price: 890, oldPrice: 990, discountPercentage: 10,
-    rating: 4.9, reviewCount: 160, soldCount: 410, stock: 6,
-    description: 'Iconic 1967 design by Achille and Pier Giacomo Castiglioni featuring a white Carrara marble base and enamelled metal shade.',
-    images: [
-      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80',
-      'https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?w=800&q=80'
-    ],
-    colors: ['#090909', '#059669'], sizes: null,
-    specifications: { Base: 'White Carrara Marble', Dimmer: 'Integrated Sensor Touch Dimmer', Origin: 'Made in Italy' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 7. CRAFTS ---
-  {
-    id: 33,
-    title: 'Shozaburo Japanese Tailor Shears 240mm',
-    category: 'Crafts', categorySlug: 'crafts',
-    brand: 'AURA Studio', price: 89, oldPrice: 105, discountPercentage: 15,
-    rating: 4.9, reviewCount: 340, soldCount: 980, stock: 15,
-    description: 'Hand-forged Japanese high-carbon steel shears offering effortless razor-sharp cutting precision for fabric and leather.',
-    images: [
-      'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
-      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80',
-      'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { Steel: 'Hitachi High-Carbon Steel', Length: '240 mm (9.5")', Handedness: 'Right-Handed' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-
-  // --- 8. BOOKS ---
-  {
-    id: 34,
-    title: 'Taschen Bauhaus & Beyond Hardcover Monograph',
-    category: 'Books', categorySlug: 'books',
-    brand: 'AURA Studio', price: 80, oldPrice: 95, discountPercentage: 15,
-    rating: 5.0, reviewCount: 520, soldCount: 1450, stock: 25,
-    description: 'Comprehensive 576-page hardcover exploring the revolutionary architecture, typography, and product design of the Bauhaus school.',
-    images: [
-      'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80',
-      'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80',
-      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { Format: 'Hardcover 25 x 34 cm', Pages: '576 Pages', Publisher: 'TASCHEN' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 9. ACCESSORIES ---
-  {
-    id: 35,
-    title: 'Nomos Glashütte Tangente 38 Automatic Watch',
-    category: 'Accessories', categorySlug: 'accessories',
-    brand: 'AURA Studio', price: 1850, oldPrice: 2050, discountPercentage: 9,
-    rating: 5.0, reviewCount: 280, soldCount: 610, stock: 4,
-    description: 'Iconic German Bauhaus wristwatch powered by the DUW 3001 ultra-thin automatic caliber with sapphire glass back.',
-    images: [
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80',
-      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80',
-      'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800&q=80'
-    ],
-    colors: ['#F5F5F7', '#090909'], sizes: null,
-    specifications: { Movement: 'In-House DUW 3001 Automatic', Diameter: '37.5 mm', Crystal: 'Sapphire Crystal Glass' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-  {
-    id: 36,
-    title: 'Bleu de Chauffe Full Grain Leather Briefcase',
-    category: 'Accessories', categorySlug: 'accessories',
-    brand: 'Minimalist Co.', price: 420, oldPrice: 480, discountPercentage: 12,
-    rating: 4.8, reviewCount: 190, soldCount: 530, stock: 9,
-    description: 'Handcrafted in France from vegetable-tanned leather. Fits up to a 16" laptop with felt padded sleeves.',
-    images: [
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80',
-      'https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&q=80',
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80'
-    ],
-    colors: ['#78350F', '#090909'], sizes: null,
-    specifications: { Leather: 'Vegetable-Tanned Organic Leather', Fits: '16" Laptop & Accessories', Origin: 'Handmade in France' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-
-  // --- 10. SPORTS ---
-  {
-    id: 37,
-    title: 'Manduka PRO 6mm Non-Slip Rubber Yoga Mat',
-    category: 'Sports', categorySlug: 'sports',
-    brand: 'Minimalist Co.', price: 128, oldPrice: 145, discountPercentage: 11,
-    rating: 4.9, reviewCount: 710, soldCount: 2890, stock: 22,
-    description: 'Ultra-dense 6mm joint-protecting yoga mat engineered with closed-cell surface technology that blocks moisture.',
-    images: [
-      'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&q=80',
-      'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800&q=80',
-      'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80'
-    ],
-    colors: ['#090909', '#4B5563', '#1D4ED8'], sizes: null,
-    specifications: { Thickness: '6 mm Heavy Duty', Material: 'OEKO-TEX Certified PVC', Guarantee: 'Lifetime Manduka Warranty' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 11. HEALTH & BEAUTY ---
-  {
-    id: 38,
-    title: 'Aesop Parsley Seed Anti-Oxidant Intense Serum 100ml',
-    category: 'Health & Beauty', categorySlug: 'health-beauty',
-    brand: 'Nordic Lab', price: 95, oldPrice: 110, discountPercentage: 13,
-    rating: 4.9, reviewCount: 820, soldCount: 3100, stock: 28,
-    description: 'Potent hydrating serum enriched with red algae and parsley seed extracts to fortify skin against urban pollution.',
-    images: [
-      'https://images.unsplash.com/photo-1608248597349-f83196947b19?w=800&q=80',
-      'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
-      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { KeyIngredients: 'Parsley Seed, Tocopherol, Red Algae', Volume: '100 ml Glass Amber Bottle' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 12. OFFICE ---
-  {
-    id: 39,
-    title: 'Grovemade Wool Felt Desk Pad Large',
-    category: 'Office', categorySlug: 'office',
-    brand: 'AURA Studio', price: 70, oldPrice: 85, discountPercentage: 17,
-    rating: 4.8, reviewCount: 640, soldCount: 2200, stock: 35,
-    description: 'Premium 100% German merino wool felt desk mat providing soft tactile warmth and desk protection.',
-    images: [
-      'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80',
-      'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80',
-      'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&q=80'
-    ],
-    colors: ['#3F3F46', '#D4D4D8'], sizes: null,
-    specifications: { Material: '100% German Merino Wool Felt', Dimensions: '96 x 45 cm', Thickness: '3 mm' },
-    isFreeShipping: false, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 13. KITCHEN ---
-  {
-    id: 40,
-    title: 'Le Creuset Enameled Cast Iron Dutch Oven 5.5 Qt',
-    category: 'Kitchen', categorySlug: 'kitchen',
-    brand: 'Minimalist Co.', price: 420, oldPrice: 460, discountPercentage: 8,
-    rating: 5.0, reviewCount: 1100, soldCount: 3800, stock: 12,
-    description: 'Iconic French enameled cast iron Dutch oven distributing heat evenly for braising, slow cooking, and baking bread.',
-    images: [
-      'https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=800&q=80',
-      'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',
-      'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f6?w=800&q=80'
-    ],
-    colors: ['#DC2626', '#090909', '#2563EB'], sizes: null,
-    specifications: { Capacity: '5.5 Quarts (5.2L)', Material: 'Enameled Cast Iron', HeatSafe: 'Oven Safe up to 260°C' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 14. PETS ---
-  {
-    id: 41,
-    title: 'Wild One Minimalist Ceramic Pet Bowl Set',
-    category: 'Pets', categorySlug: 'pets',
-    brand: 'Nordic Lab', price: 48, oldPrice: 58, discountPercentage: 17,
-    rating: 4.8, reviewCount: 310, soldCount: 940, stock: 25,
-    description: 'Set of 2 weighted stoneware ceramic feeding bowls with sturdy non-slip silicone base ring.',
-    images: [
-      'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80',
-      'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&q=80',
-      'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80'
-    ],
-    colors: ['#F5F5F7', '#090909'], sizes: null,
-    specifications: { Material: 'Heavy Stoneware Ceramic', Base: 'Removable Silicone Ring', Capacity: '4 Cups Each' },
-    isFreeShipping: false, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-
-  // --- 15. PHOTOGRAPHY ---
-  {
-    id: 42,
-    title: 'Leica M11 Rangefinder Digital Camera Body',
-    category: 'Photography', categorySlug: 'photography',
-    brand: 'Leica', price: 8995, oldPrice: 9495, discountPercentage: 5,
-    rating: 5.0, reviewCount: 95, soldCount: 180, stock: 2,
-    description: '60MP full-frame M BSI CMOS sensor digital rangefinder camera featuring triple-resolution technology and brass top plate.',
-    images: [
-      'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80',
-      'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80',
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7'], sizes: null,
-    specifications: { Sensor: '60MP Full-Frame BSI CMOS', Storage: '64GB Internal + SD Card Slot', Body: 'Solid Brass & Aluminium' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 16. AUTOMOTIVE ---
-  {
-    id: 43,
-    title: 'Xiaomi Portable Electric Air Compressor 2',
-    category: 'Automotive', categorySlug: 'automotive',
-    brand: 'AURA Studio', price: 59, oldPrice: 75, discountPercentage: 21,
-    rating: 4.8, reviewCount: 780, soldCount: 3100, stock: 40,
-    description: 'Compact handheld cordless tyre inflator pumping up to 150 PSI with automatic digital pressure detection.',
-    images: [
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
-      'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=800&q=80',
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80'
-    ],
-    colors: ['#090909'], sizes: null,
-    specifications: { MaxPressure: '150 PSI', Charging: 'USB-C Type Cable', Display: 'Digital LED Screen' },
-    isFreeShipping: false, isBestseller: true, isNewArrival: false, isFlashSale: true
-  },
-
-  // --- 17. MUSIC ---
-  {
-    id: 44,
-    title: 'Pro-Ject Debut Carbon EVO Vinyl Turntable',
-    category: 'Music', categorySlug: 'music',
-    brand: 'Bang & Olufsen', price: 599, oldPrice: 650, discountPercentage: 8,
-    rating: 4.9, reviewCount: 420, soldCount: 1290, stock: 9,
-    description: 'Audiophile turntable featuring 8.6" carbon fiber tonearm, Ortofon 2M Red cartridge, and electronic 33/45 RPM speed control.',
-    images: [
-      'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80',
-      'https://images.unsplash.com/photo-1543512214-318c7553f230?w=800&q=80',
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80'
-    ],
-    colors: ['#090909', '#F5F5F7', '#DC2626'], sizes: null,
-    specifications: { Tonearm: '8.6" One-Piece Carbon Fiber', Cartridge: 'Ortofon 2M Red MM', Speed: '33/45 RPM Electronic' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 18. OUTDOOR ---
-  {
-    id: 45,
-    title: 'MSR PocketRocket 2 Ultralight Backpacking Stove',
-    category: 'Outdoor', categorySlug: 'outdoor',
-    brand: 'Nordic Lab', price: 49, oldPrice: 59, discountPercentage: 17,
-    rating: 4.9, reviewCount: 890, soldCount: 3800, stock: 30,
-    description: 'Featherlight 73g backpacking stove boiling 1 liter of water in just 3.5 minutes.',
-    images: [
-      'https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=80',
-      'https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=800&q=80',
-      'https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { Weight: '73g (2.6 oz)', BoilTime: '3.5 Minutes for 1L', Fuel: 'Isobutane-Propane Canister' },
-    isFreeShipping: false, isBestseller: true, isNewArrival: false, isFlashSale: false
-  },
-
-  // --- 19. SMART HOME ---
-  {
-    id: 46,
-    title: 'Nanoleaf Lines RGB Smart Lighting Bars Starter Kit',
-    category: 'Smart Home', categorySlug: 'smart-home',
-    brand: 'AURA Studio', price: 199, oldPrice: 229, discountPercentage: 13,
-    rating: 4.8, reviewCount: 350, soldCount: 1100, stock: 15,
-    description: 'Smart LED backlight bar kit creating dynamic ambient lighting synced with music or computer screen visuals.',
-    images: [
-      'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
-      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80',
-      'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { Light: '16M+ RGB Colors', Ecosystem: 'Apple HomeKit, Google Home, Alexa', Pack: '9 Smart Light Lines' },
-    isFreeShipping: true, isBestseller: false, isNewArrival: true, isFlashSale: false
-  },
-
-  // --- 20. TOYS ---
-  {
-    id: 47,
-    title: 'LEGO Architecture Fallingwater Model Building Kit',
-    category: 'Toys', categorySlug: 'toys',
-    brand: 'Minimalist Co.', price: 180, oldPrice: 210, discountPercentage: 14,
-    rating: 5.0, reviewCount: 410, soldCount: 1250, stock: 12,
-    description: 'Detailed 815-piece Lego replica of Frank Lloyd Wright\'s famous architectural masterpiece Fallingwater.',
-    images: [
-      'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80',
-      'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80',
-      'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80'
-    ],
-    colors: null, sizes: null,
-    specifications: { Pieces: '815 Pieces', Dimensions: '25 x 12 cm', Age: '16+ Architectural Series' },
-    isFreeShipping: true, isBestseller: true, isNewArrival: false, isFlashSale: false
-  }
-];
-
-// Dynamically generate remaining products so every category has 8 distinct items with 0 duplicated image URLs!
 const categoryNames = [
   'Electronics', 'Fashion', 'Gaming', 'Furniture', 'Food & Beverage',
   'Home Decoration', 'Crafts', 'Books', 'Accessories', 'Sports',
@@ -825,157 +30,723 @@ const categoryNames = [
   'Automotive', 'Music', 'Outdoor', 'Smart Home', 'Toys'
 ];
 
-const categoryUniqueImages = {
+// Verified high quality images per category (8 distinct image sets per category, cycled cleanly)
+const categoryVerifiedImages = {
   'Electronics': [
-    ['https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80', 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80', 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80', 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80', 'https://images.unsplash.com/photo-1572536147248-ac59a8abfa4d?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1622445268465-8378c6922e49?w=800&q=80', 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80', 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1609592424074-b52b2f6ef1e4?w=800&q=80', 'https://images.unsplash.com/photo-1622445268465-8378c6922e49?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80']
+    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80',
+    'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80',
+    'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80',
+    'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80',
+    'https://images.unsplash.com/photo-1622445268465-8378c6922e49?w=800&q=80',
+    'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80',
+    'https://images.unsplash.com/photo-1609592424074-b52b2f6ef1e4?w=800&q=80',
+    'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80'
   ],
   'Fashion': [
-    ['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=80', 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1544923246-77307dd654cb?w=800&q=80', 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80', 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80', 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=80', 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80', 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80', 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80', 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=80']
+    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=80',
+    'https://images.unsplash.com/photo-1544923246-77307dd654cb?w=800&q=80',
+    'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80',
+    'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80',
+    'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=80',
+    'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80',
+    'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80',
+    'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80'
   ],
   'Gaming': [
-    ['https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80', 'https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80', 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80', 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80', 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80', 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80', 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800&q=80', 'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80']
+    'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80',
+    'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80',
+    'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
+    'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&q=80',
+    'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80',
+    'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80',
+    'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
+    'https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=800&q=80'
   ],
   'Furniture': [
-    ['https://images.unsplash.com/photo-1580481072645-022f9a6d85d0?w=800&q=80', 'https://images.unsplash.com/photo-1505797149-43b0069ec26b?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80', 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80', 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80', 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80', 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80', 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=800&q=80', 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80', 'https://images.unsplash.com/photo-1580481072645-022f9a6d85d0?w=800&q=80']
+    'https://images.unsplash.com/photo-1580481072645-022f9a6d85d0?w=800&q=80',
+    'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80',
+    'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80',
+    'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80',
+    'https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80',
+    'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
+    'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=800&q=80',
+    'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80'
   ],
   'Food & Beverage': [
-    ['https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80', 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&q=80', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80', 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80', 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=800&q=80', 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80', 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800&q=80', 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=800&q=80']
+    'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80',
+    'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&q=80',
+    'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80',
+    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
+    'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80',
+    'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=800&q=80',
+    'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
+    'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800&q=80'
   ],
   'Home Decoration': [
-    ['https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?w=800&q=80', 'https://images.unsplash.com/photo-1581783342308-f792dbdd77c5?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80', 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&q=80', 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80', 'https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=800&q=80', 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80', 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800&q=80', 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80'],
-    ['https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80', 'https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?w=800&q=80']
+    'https://images.unsplash.com/photo-1612196808214-b7e239e5f6b7?w=800&q=80',
+    'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80',
+    'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&q=80',
+    'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80',
+    'https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=800&q=80',
+    'https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80',
+    'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800&q=80',
+    'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80'
+  ],
+  'Crafts': [
+    'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
+    'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80',
+    'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80',
+    'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80'
+  ],
+  'Books': [
+    'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80',
+    'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80',
+    'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80'
+  ],
+  'Accessories': [
+    'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80',
+    'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80',
+    'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80',
+    'https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&q=80'
+  ],
+  'Sports': [
+    'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&q=80',
+    'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80',
+    'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800&q=80'
+  ],
+  'Health & Beauty': [
+    'https://images.unsplash.com/photo-1608248597349-f83196947b19?w=800&q=80',
+    'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
+    'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80'
+  ],
+  'Office': [
+    'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80',
+    'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80',
+    'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&q=80'
+  ],
+  'Kitchen': [
+    'https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=800&q=80',
+    'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&q=80',
+    'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f6?w=800&q=80'
+  ],
+  'Pets': [
+    'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80',
+    'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&q=80'
+  ],
+  'Photography': [
+    'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80',
+    'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80',
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80'
+  ],
+  'Automotive': [
+    'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
+    'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=800&q=80'
+  ],
+  'Music': [
+    'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80',
+    'https://images.unsplash.com/photo-1543512214-318c7553f230?w=800&q=80',
+    'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80'
+  ],
+  'Outdoor': [
+    'https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=80',
+    'https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=800&q=80'
+  ],
+  'Smart Home': [
+    'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
+    'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80'
+  ],
+  'Toys': [
+    'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80',
+    'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80'
   ]
 };
 
-// Build list of 160 products guaranteed to have distinct titles and non-broken images
-const generate160Products = () => {
-  const fullList = [...baseProductsList];
-  let nextId = fullList.length + 1;
+// 24 Real Original Products per category
+const categoryProductTitles = {
+  'Electronics': [
+    { title: 'Sony WH-1000XM5 Wireless Headphones', brand: 'SONY', price: 398 },
+    { title: 'Keychron K2 Wireless Mechanical Keyboard', brand: 'AURA Studio', price: 119 },
+    { title: 'Apple Studio Display 27" 5K Retina', brand: 'AURA Studio', price: 1599 },
+    { title: 'Bose QuietComfort Ultra Earbuds', brand: 'BOSE', price: 299 },
+    { title: 'Anker 3-in-1 Cube MagSafe Station', brand: 'Minimalist Co.', price: 149 },
+    { title: 'Apple Magic Trackpad 3 Space Black', brand: 'AURA Studio', price: 149 },
+    { title: 'Belkin BoostCharge Pro 24,000mAh 140W', brand: 'Minimalist Co.', price: 129 },
+    { title: 'Audioquest DragonFly Cobalt USB DAC', brand: 'Bang & Olufsen', price: 329 },
+    { title: 'Sennheiser Momentum 4 Wireless Headphones', brand: 'BOSE', price: 349 },
+    { title: 'Samsung ViewFinity S9 5K Matte Display', brand: 'SONY', price: 1299 },
+    { title: 'Logitech MX Keys S Wireless Keyboard', brand: 'AURA Studio', price: 129 },
+    { title: 'DJI Mic 2 Compact Wireless Microphone', brand: 'SONY', price: 349 },
+    { title: 'Shure MV7X Dynamic Podcast Microphone', brand: 'BOSE', price: 179 },
+    { title: 'Elgato Stream Deck XL 32-Key Controller', brand: 'AURA Studio', price: 249 },
+    { title: 'Marshall Stanmore III Bluetooth Speaker', brand: 'Bang & Olufsen', price: 379 },
+    { title: 'Garmin Fenix 7X Pro Sapphire Solar', brand: 'Minimalist Co.', price: 899 },
+    { title: 'GoPro HERO12 Black Action Camera', brand: 'SONY', price: 399 },
+    { title: 'Canon EOS R6 Mark II Mirrorless Camera', brand: 'Leica', price: 2499 },
+    { title: 'Nikon Z8 Full Frame Camera Body', brand: 'Leica', price: 3799 },
+    { title: 'LG UltraGear OLED 27" 240Hz Monitor', brand: 'SONY', price: 899 },
+    { title: 'Razer Huntsman V3 Pro TKL Keyboard', brand: 'AURA Studio', price: 219 },
+    { title: 'Bang & Olufsen Beosound Explore Speaker', brand: 'Bang & Olufsen', price: 199 },
+    { title: 'Nintendo Switch OLED Model White', brand: 'SONY', price: 349 },
+    { title: 'ASUS ROG Swift 32" 4K OLED Gaming Display', brand: 'SONY', price: 1299 }
+  ],
+  'Fashion': [
+    { title: 'Acne Studios Heavyweight Cotton Tee', brand: 'Nordic Lab', price: 180 },
+    { title: 'Burberry Wool Cashmere Trench Coat', brand: 'Nordic Lab', price: 1250 },
+    { title: 'Nudie Jeans Lean Dean Selvage Denim', brand: 'AURA Studio', price: 199 },
+    { title: 'Arc\'teryx Beta LT GORE-TEX Jacket', brand: 'Nordic Lab', price: 450 },
+    { title: 'Uniqlo U Heavyweight Fleece Hoodie', brand: 'Minimalist Co.', price: 69 },
+    { title: 'A.P.C. Minimalist Grain Leather Belt', brand: 'AURA Studio', price: 135 },
+    { title: 'COS Tailored Pleated Wool Trousers', brand: 'Nordic Lab', price: 150 },
+    { title: 'AMI Paris Merino Wool Ami Sweater', brand: 'Minimalist Co.', price: 385 },
+    { title: 'Saint Laurent Teddy Bomber Jacket', brand: 'Nordic Lab', price: 2490 },
+    { title: 'Maison Margiela Tabi Leather Boots', brand: 'Nordic Lab', price: 990 },
+    { title: 'Jacquemus Le Sweatshirt Cotton Hoodie', brand: 'Minimalist Co.', price: 310 },
+    { title: 'Off-White Caravaggio Print Cotton Tee', brand: 'AURA Studio', price: 340 },
+    { title: 'Carhartt WIP Single Knee Canvas Pants', brand: 'Minimalist Co.', price: 138 },
+    { title: 'Patagonia Down Sweater Hoody Jacket', brand: 'Nordic Lab', price: 279 },
+    { title: 'Polo Ralph Lauren Iconic Oxford Shirt', brand: 'Minimalist Co.', price: 125 },
+    { title: 'Stone Island Crinkle Reps NY Down Jacket', brand: 'Nordic Lab', price: 1150 },
+    { title: 'Moncler Maya Short Down Jacket', brand: 'Nordic Lab', price: 1650 },
+    { title: 'Prada Re-Nylon Gabardine Shorts', brand: 'Nordic Lab', price: 790 },
+    { title: 'Loewe Anagram Embroidered Sweatshirt', brand: 'Minimalist Co.', price: 690 },
+    { title: 'Celine Homme Loose Cotton Hoodie', brand: 'Minimalist Co.', price: 750 },
+    { title: 'Balenciaga Oversized Heavy Tee', brand: 'AURA Studio', price: 590 },
+    { title: 'Gucci Horsebit Leather Loafers', brand: 'Minimalist Co.', price: 920 },
+    { title: 'Tom Ford Selvedge Slim Fit Denim', brand: 'AURA Studio', price: 680 },
+    { title: 'Givenchy Slim Fit Cotton Poplin Shirt', brand: 'Minimalist Co.', price: 490 }
+  ],
+  'Gaming': [
+    { title: 'PlayStation 5 DualSense Edge Controller', brand: 'SONY', price: 199 },
+    { title: 'Logitech G Pro X Superlight 2 Mouse', brand: 'AURA Studio', price: 159 },
+    { title: 'Alienware 34" QD-OLED Curved Monitor', brand: 'SONY', price: 999 },
+    { title: 'SteelSeries Arctis Nova Pro Headset', brand: 'BOSE', price: 349 },
+    { title: 'Elgato Wave:3 Condenser Microphone', brand: 'SONY', price: 149 },
+    { title: 'Razer BlackWidow V4 Pro Keyboard', brand: 'AURA Studio', price: 229 },
+    { title: 'Philips Hue Play RGB Gaming Light Bar', brand: 'AURA Studio', price: 159 },
+    { title: 'Xbox Elite Wireless Controller Series 2', brand: 'SONY', price: 179 },
+    { title: 'Nintendo Switch OLED White Console', brand: 'SONY', price: 349 },
+    { title: 'ASUS ROG Swift OLED 27" 240Hz Display', brand: 'SONY', price: 899 },
+    { title: 'Corsair K70 MAX RGB Magnetic Keyboard', brand: 'AURA Studio', price: 229 },
+    { title: 'HyperX Cloud III Wireless Gaming Headset', brand: 'BOSE', price: 169 },
+    { title: 'Secretlab TITAN EVO Ergonomic Chair', brand: 'Herman Miller', price: 549 },
+    { title: 'Valve Steam Deck OLED 512GB Handheld', brand: 'SONY', price: 549 },
+    { title: 'SCUF Reflex Pro PS5 Wireless Controller', brand: 'SONY', price: 219 },
+    { title: 'Turtle Beach Stealth Pro Gaming Headset', brand: 'BOSE', price: 329 },
+    { title: 'BenQ ZOWIE XL2566K 360Hz Esports Display', brand: 'SONY', price: 599 },
+    { title: 'NZXT H9 Flow Dual-Chamber Mid-Tower Case', brand: 'AURA Studio', price: 159 },
+    { title: 'Thrustmaster T300 RS GT Racing Wheel', brand: 'SONY', price: 449 },
+    { title: 'Roccat Vulcan II Max RGB Mechanical Keyboard', brand: 'AURA Studio', price: 199 },
+    { title: 'Glorious Model O 2 Wireless Gaming Mouse', brand: 'AURA Studio', price: 99 },
+    { title: 'EPOMAKER EK68 Gasket Mechanical Keyboard', brand: 'AURA Studio', price: 89 },
+    { title: 'Wooting 60HE Hall Effect Analog Keyboard', brand: 'AURA Studio', price: 175 },
+    { title: 'Sony INZONE M9 4K 144Hz Gaming Monitor', brand: 'SONY', price: 799 }
+  ],
+  'Furniture': [
+    { title: 'Herman Miller Aeron Ergonomic Chair', brand: 'Herman Miller', price: 1295 },
+    { title: 'Nordic Solid European Oak Writing Desk', brand: 'Nordic Lab', price: 790 },
+    { title: 'Fritz Hansen Egg Lounge Chair Leather', brand: 'Herman Miller', price: 3200 },
+    { title: 'Muuto Stacked Modular Oak Bookshelf', brand: 'Minimalist Co.', price: 650 },
+    { title: 'Hay Palissade Outdoor Lounge Stool', brand: 'Nordic Lab', price: 280 },
+    { title: 'Muuto Connect Modular 3-Seater Sofa', brand: 'Nordic Lab', price: 2450 },
+    { title: 'Menu Snaregade Marble Dining Table', brand: 'Minimalist Co.', price: 1850 },
+    { title: 'Fritz Hansen Series 7 Sculptural Chair', brand: 'Herman Miller', price: 520 },
+    { title: 'Vitra Eames Lounge Chair & Ottoman', brand: 'Herman Miller', price: 4950 },
+    { title: 'Knoll Florence 3-Seater Leather Sofa', brand: 'Herman Miller', price: 3800 },
+    { title: 'USM Haller Modular Storage Credenza', brand: 'Minimalist Co.', price: 1950 },
+    { title: 'Carl Hansen & Søn CH24 Wishbone Chair', brand: 'Nordic Lab', price: 695 },
+    { title: 'Artek Stool 60 Birch Natural Finish', brand: 'Nordic Lab', price: 290 },
+    { title: 'Menu Harbour Dining Armchair Shell', brand: 'Nordic Lab', price: 380 },
+    { title: 'Hem Palo 2-Seater Fabric Sofa', brand: 'Nordic Lab', price: 1650 },
+    { title: 'Ferm Living Plant Box Metal Stand', brand: 'Minimalist Co.', price: 245 },
+    { title: 'Gubi Beetle Upholstered Velvet Chair', brand: 'Nordic Lab', price: 645 },
+    { title: 'String Furniture Pocket Shelving System', brand: 'Minimalist Co.', price: 175 },
+    { title: 'Kartell Componibili 3-Element Storage', brand: 'Minimalist Co.', price: 195 },
+    { title: 'Ligne Roset Togo Fireside Chair Fabric', brand: 'Nordic Lab', price: 1980 },
+    { title: 'Knoll Barcelona Chair Chrome & Leather', brand: 'Herman Miller', price: 4200 },
+    { title: 'Louis Poulsen PH 5 Pendant Brass Lamp', brand: 'Nordic Lab', price: 995 },
+    { title: 'Flos Arco Floor Lamp Marble Base', brand: 'Nordic Lab', price: 1690 },
+    { title: 'Zanotta Sacco Anatomical Beanbag Chair', brand: 'Nordic Lab', price: 580 }
+  ],
+  'Food & Beverage': [
+    { title: 'Blue Bottle Ethiopian Yirgacheffe Beans', brand: 'Minimalist Co.', price: 32 },
+    { title: 'Ippodo Tea Ceremonial Uji Matcha 100g', brand: 'Minimalist Co.', price: 48 },
+    { title: 'Kinto Capsule Cold Brew Infusion Carafe', brand: 'Minimalist Co.', price: 42 },
+    { title: 'Fellow Monty Espresso Ceramic Cup Set', brand: 'Minimalist Co.', price: 38 },
+    { title: 'Verve Coffee Roasters Single-Origin Pack', brand: 'Minimalist Co.', price: 28 },
+    { title: 'Harney & Sons Imperial Earl Grey Loose', brand: 'Minimalist Co.', price: 24 },
+    { title: 'Cometeer Specialty Frozen Coffee Pods', brand: 'Minimalist Co.', price: 45 },
+    { title: 'Vosges Haut-Chocolat Artisanal Dark Bar', brand: 'Minimalist Co.', price: 18 },
+    { title: 'Onyx Coffee Lab Monarch Espresso Beans', brand: 'Minimalist Co.', price: 26 },
+    { title: 'Stumptown Hair Bender Whole Bean Coffee', brand: 'Minimalist Co.', price: 22 },
+    { title: 'Matchaeologist Ceremonial Matsu Matcha', brand: 'Minimalist Co.', price: 54 },
+    { title: 'Kusmi Tea Paris Organic Detox Blend', brand: 'Minimalist Co.', price: 29 },
+    { title: 'TWG Imperial Sencha Loose Green Tea', brand: 'Minimalist Co.', price: 36 },
+    { title: 'Fortnum & Mason Royal Blend Tea Tin', brand: 'Minimalist Co.', price: 34 },
+    { title: 'Valrhona Guanaja 70% Dark Baking Chocolate', brand: 'Minimalist Co.', price: 24 },
+    { title: 'Compartés Artisanal Dark Chocolate Bar', brand: 'Minimalist Co.', price: 14 },
+    { title: 'Mast Organic Dark Chocolate 75% Cocoa', brand: 'Minimalist Co.', price: 12 },
+    { title: 'San Pellegrino Sparkling Water 750ml x6', brand: 'Minimalist Co.', price: 18 },
+    { title: 'Marvis Italian Mint Toothpaste Gift Set', brand: 'Minimalist Co.', price: 35 },
+    { title: 'Tartine Bakery Organic Oat Granola Pack', brand: 'Minimalist Co.', price: 16 },
+    { title: 'Stonewall Kitchen Wild Blueberry Jam', brand: 'Minimalist Co.', price: 12 },
+    { title: 'Fever-Tree Elderflower Tonic Water 4-Pack', brand: 'Minimalist Co.', price: 10 },
+    { title: 'Sightglass Coffee Crown Point Blend 12oz', brand: 'Minimalist Co.', price: 20 },
+    { title: 'Bellocq Tea Atelier No. 35 Earl Grey', brand: 'Minimalist Co.', price: 38 }
+  ],
+  'Home Decoration': [
+    { title: 'Muuto Kink Ceramic Sculptural Vase', brand: 'AURA Studio', price: 125 },
+    { title: 'Flos Snoopy Architectural Table Lamp', brand: 'Nordic Lab', price: 890 },
+    { title: 'Diptyque Baies Aromatic Scented Candle', brand: 'Nordic Lab', price: 72 },
+    { title: 'Ferm Living Abstract Wool Wall Tapestry', brand: 'Nordic Lab', price: 195 },
+    { title: 'Arne Jacobsen Bankers Wall Clock 29cm', brand: 'Nordic Lab', price: 210 },
+    { title: 'Menu POV Metal Sconce Candle Holder', brand: 'Minimalist Co.', price: 58 },
+    { title: 'Hay Tinted Glass Pitcher Amber Finish', brand: 'Nordic Lab', price: 48 },
+    { title: 'Ferm Living Pond Wall Mirror Brass Frame', brand: 'Nordic Lab', price: 295 },
+    { title: 'Vitra Wooden Dolls Handcrafted Figure', brand: 'Minimalist Co.', price: 145 },
+    { title: 'Skultuna Brass Kin Candleholder Set', brand: 'Nordic Lab', price: 185 },
+    { title: 'Maison Louis Marie No.04 Scented Candle', brand: 'Nordic Lab', price: 38 },
+    { title: 'Menu Bottle Salt & Pepper Grinder Pair', brand: 'Minimalist Co.', price: 89 },
+    { title: 'Hay Colour Crate Stackable Box Set', brand: 'Nordic Lab', price: 24 },
+    { title: 'Byredo Cotton Poplin Scented Candle', brand: 'Nordic Lab', price: 90 },
+    { title: 'Ferm Living Ripple Hand-Blown Glasses', brand: 'Nordic Lab', price: 65 },
+    { title: 'Alessi Juicy Salif Citrus Squeezer', brand: 'Minimalist Co.', price: 110 },
+    { title: 'Georg Jensen Cobra Stainless Steel Vase', brand: 'Nordic Lab', price: 175 },
+    { title: 'Tom Dixon Melt Pendant Light Chrome', brand: 'Nordic Lab', price: 780 },
+    { title: 'Stelton EM77 Vacuum Jug 1L Matte Black', brand: 'Nordic Lab', price: 85 },
+    { title: 'Normann Copenhagen Geo Vacuum Jug', brand: 'Nordic Lab', price: 75 },
+    { title: 'Royal Copenhagen Blue Fluted Porcelain', brand: 'Nordic Lab', price: 120 },
+    { title: 'Kosta Boda Contrast Glass Salad Bowl', brand: 'Nordic Lab', price: 140 },
+    { title: 'Hay Kaleido Geometric Serving Tray', brand: 'Nordic Lab', price: 45 },
+    { title: 'Ferm Living Balance Candle Holder Brass', brand: 'Nordic Lab', price: 52 }
+  ],
+  'Crafts': [
+    { title: 'Shozaburo Japanese Tailor Shears 240mm', brand: 'AURA Studio', price: 89 },
+    { title: 'Olfa Heavy-Duty Japanese Utility Cutter', brand: 'AURA Studio', price: 22 },
+    { title: 'Tandy Leather Tochigi Vegetable Sheet', brand: 'Minimalist Co.', price: 110 },
+    { title: 'Shinwa Stainless Steel Ruler 30cm', brand: 'AURA Studio', price: 18 },
+    { title: 'Midori Brass Bullet Pencil & Holder', brand: 'AURA Studio', price: 28 },
+    { title: 'Allex Japanese Non-Stick Shears', brand: 'AURA Studio', price: 34 },
+    { title: 'Rotring 600 Mechanical Pencil 0.5mm', brand: 'AURA Studio', price: 38 },
+    { title: 'Pueblo Leather Handmade Tool Roll Bag', brand: 'Minimalist Co.', price: 95 },
+    { title: 'Tombow Dual Brush Pens 10-Color Set', brand: 'AURA Studio', price: 29 },
+    { title: 'Faber-Castell Polychromos 36 Pencils', brand: 'AURA Studio', price: 85 },
+    { title: 'Prismacolor Premier Colored Pencils 48', brand: 'AURA Studio', price: 65 },
+    { title: 'Winsor & Newton Cotman Watercolor Set', brand: 'AURA Studio', price: 42 },
+    { title: 'Arches 100% Cotton Watercolor Pad', brand: 'AURA Studio', price: 36 },
+    { title: 'Derwent Graphic Sketching Pencils 12', brand: 'AURA Studio', price: 24 },
+    { title: 'Caran d\'Ache Neocolor II Pastels 15', brand: 'AURA Studio', price: 39 },
+    { title: 'Staedtler Pigment Liner Fineliner Set', brand: 'AURA Studio', price: 19 },
+    { title: 'Copic Sketch Markers 12-Piece Basic', brand: 'AURA Studio', price: 79 },
+    { title: 'Hahnemühle Nostalgie Sketchbook A4', brand: 'AURA Studio', price: 26 },
+    { title: 'Posca Acrylic Paint Markers 8-Pack', brand: 'AURA Studio', price: 32 },
+    { title: 'Sakura Pigma Micron Black Pens 6-Set', brand: 'AURA Studio', price: 16 },
+    { title: 'Daniel Smith Extra Fine Watercolors 6', brand: 'AURA Studio', price: 58 },
+    { title: 'Schmincke Horadam Half Pans Set 12', brand: 'AURA Studio', price: 115 },
+    { title: 'Escoda Reserva Kolinsky Tajmyr Brush', brand: 'AURA Studio', price: 48 },
+    { title: 'Holbein Heavy Body Acrylic Paints Set', brand: 'AURA Studio', price: 74 }
+  ],
+  'Books': [
+    { title: 'Taschen Bauhaus Hardcover Monograph', brand: 'AURA Studio', price: 80 },
+    { title: 'Josef Müller-Brockmann Grid Systems', brand: 'AURA Studio', price: 55 },
+    { title: 'Phaidon Modern Tropical Architecture', brand: 'AURA Studio', price: 69 },
+    { title: 'Vitra Design Museum Chair Collection', brand: 'AURA Studio', price: 85 },
+    { title: 'Robert Bringhurst Elements of Style', brand: 'AURA Studio', price: 35 },
+    { title: 'Gestalten Modern Living Spaces Monograph', brand: 'AURA Studio', price: 60 },
+    { title: 'Taschen Leica 100 Years Photography', brand: 'Leica', price: 120 },
+    { title: 'Phaidon Japan: The Cookbook Monograph', brand: 'AURA Studio', price: 49 },
+    { title: 'Monocle Guide to Better Living Book', brand: 'AURA Studio', price: 60 },
+    { title: 'Gestalten Nordic Living Interiors Book', brand: 'AURA Studio', price: 55 },
+    { title: 'Phaidon Art Today Comprehensive Survey', brand: 'AURA Studio', price: 75 },
+    { title: 'Taschen Tadao Ando Complete Works', brand: 'AURA Studio', price: 150 },
+    { title: 'Rizzoli Tom Ford Hardcover Fashion Monograph', brand: 'AURA Studio', price: 135 },
+    { title: 'Phaidon Architecture Now Survey Vol 10', brand: 'AURA Studio', price: 45 },
+    { title: 'Thames & Hudson Century of Color Design', brand: 'AURA Studio', price: 40 },
+    { title: 'Taschen Frank Lloyd Wright Complete 1917', brand: 'AURA Studio', price: 200 },
+    { title: 'Gestalten The Monocle Book of Japan', brand: 'AURA Studio', price: 65 },
+    { title: 'Phaidon Herman Miller A Way of Living', brand: 'Herman Miller', price: 90 },
+    { title: 'Taschen Zaha Hadid Complete Works 1979', brand: 'AURA Studio', price: 160 },
+    { title: 'Rizzoli Yves Saint Laurent Catwalk Book', brand: 'AURA Studio', price: 85 },
+    { title: 'Phaidon Mid-Century Modern Architecture', brand: 'AURA Studio', price: 70 },
+    { title: 'Gestalten Wood Architecture Today', brand: 'AURA Studio', price: 68 },
+    { title: 'Taschen 1000 Chairs Revised Edition', brand: 'AURA Studio', price: 30 },
+    { title: 'Phaidon Le Corbusier Le Grand Monograph', brand: 'AURA Studio', price: 110 }
+  ],
+  'Accessories': [
+    { title: 'Nomos Glashütte Tangente 38 Watch', brand: 'AURA Studio', price: 1850 },
+    { title: 'Bleu de Chauffe Leather Briefcase', brand: 'Minimalist Co.', price: 420 },
+    { title: 'The Ridge Titanium Cash Strap Wallet', brand: 'AURA Studio', price: 115 },
+    { title: 'Moscot Lemtosh Acetate Sunglasses', brand: 'Minimalist Co.', price: 320 },
+    { title: 'Bellroy Leather Passport Sleeve', brand: 'Minimalist Co.', price: 59 },
+    { title: 'Orbitkey Titanium Key Organizer Clip', brand: 'AURA Studio', price: 45 },
+    { title: 'Native Union Stow Leather Sleeve 16"', brand: 'Minimalist Co.', price: 89 },
+    { title: 'Junghans Max Bill Quartz Wristwatch', brand: 'AURA Studio', price: 795 },
+    { title: 'Rimowa Essential Cabin Matte Carry-On', brand: 'Minimalist Co.', price: 875 },
+    { title: 'Filson Rugged Twill Original Briefcase', brand: 'Minimalist Co.', price: 495 },
+    { title: 'Tanner Goods Passfold Leather Wallet', brand: 'Minimalist Co.', price: 125 },
+    { title: 'Oliver Peoples Gregory Peck Sunglasses', brand: 'Minimalist Co.', price: 415 },
+    { title: 'Shinola Runwell 41mm Leather Watch', brand: 'AURA Studio', price: 595 },
+    { title: 'Carl Friedrik Palissy Leather Briefcase', brand: 'Minimalist Co.', price: 645 },
+    { title: 'Montblanc Meisterstück Rollerball Pen', brand: 'AURA Studio', price: 490 },
+    { title: 'Troubadour Pioneer Waterproof Backpack', brand: 'Minimalist Co.', price: 345 },
+    { title: 'Craighill Titanium Key Ring Clip Holder', brand: 'AURA Studio', price: 38 },
+    { title: 'Secrid Cardprotector Aluminium Case', brand: 'AURA Studio', price: 49 },
+    { title: 'Randolph Engineering Aviator Sunglasses', brand: 'Minimalist Co.', price: 329 },
+    { title: 'Seiko Prospex Speedtimer Automatic', brand: 'AURA Studio', price: 675 },
+    { title: 'Hamilton Khaki Field Mechanical 38mm', brand: 'AURA Studio', price: 575 },
+    { title: 'Tissot PRX Powermatic 80 Automatic', brand: 'AURA Studio', price: 675 },
+    { title: 'Longines Legend Diver Automatic 42mm', brand: 'AURA Studio', price: 2300 },
+    { title: 'Tudor Black Bay 58 Automatic Watch', brand: 'AURA Studio', price: 3800 }
+  ],
+  'Sports': [
+    { title: 'Manduka PRO 6mm Rubber Yoga Mat', brand: 'Minimalist Co.', price: 128 },
+    { title: 'Yeti Rambler 36oz Insulated Bottle', brand: 'Minimalist Co.', price: 50 },
+    { title: 'Theragun PRO Percussive Therapy Device', brand: 'Nordic Lab', price: 599 },
+    { title: 'Bowflex SelectTech 552 Dumbbells', brand: 'Minimalist Co.', price: 429 },
+    { title: 'TriggerPoint GRID Foam Roller', brand: 'Minimalist Co.', price: 45 },
+    { title: 'Lululemon Workout Mat Bag & Strap', brand: 'Minimalist Co.', price: 68 },
+    { title: 'Tangram Smart LED Jump Rope', brand: 'AURA Studio', price: 80 },
+    { title: 'Hydro Flask 32oz Wide Mouth Bottle', brand: 'Minimalist Co.', price: 45 },
+    { title: 'Garmin Forerunner 965 GPS Smartwatch', brand: 'SONY', price: 599 },
+    { title: 'WHOOP 4.0 Activity & Sleep Tracker', brand: 'AURA Studio', price: 239 },
+    { title: 'Hyperice Hypervolt 2 Massage Gun', brand: 'Nordic Lab', price: 299 },
+    { title: 'Concept2 RowErg Indoor Rowing Machine', brand: 'Minimalist Co.', price: 990 },
+    { title: 'Peloton Bike+ Indoor Cycling Machine', brand: 'Minimalist Co.', price: 2495 },
+    { title: 'TRX PRO4 Suspension Trainer System', brand: 'Minimalist Co.', price: 249 },
+    { title: 'Rogue Fitness Ohio Barbell 20kg Steel', brand: 'Minimalist Co.', price: 295 },
+    { title: 'Nike Metcon 9 Training Shoes', brand: 'Minimalist Co.', price: 150 },
+    { title: 'On Running Cloudmonster Running Shoes', brand: 'Minimalist Co.', price: 170 },
+    { title: 'Hoka Clifton 9 Cushion Running Shoes', brand: 'Minimalist Co.', price: 145 },
+    { title: 'Salomon Speedcross 6 Trail Shoes', brand: 'Minimalist Co.', price: 140 },
+    { title: 'Speedo Vanquisher 2.0 Swim Goggles', brand: 'Minimalist Co.', price: 24 },
+    { title: 'Wilson Pro Staff v14 Tennis Racket', brand: 'Minimalist Co.', price: 279 },
+    { title: 'Titleist Pro V1 Golf Balls Dozen', brand: 'Minimalist Co.', price: 55 },
+    { title: 'Specialized S-Works Prevail 3 Helmet', brand: 'Minimalist Co.', price: 300 },
+    { title: 'Arc\'teryx Atom LT Insulated Hoodie', brand: 'Nordic Lab', price: 250 }
+  ],
+  'Health & Beauty': [
+    { title: 'Aesop Parsley Seed Intense Serum 100ml', brand: 'Nordic Lab', price: 95 },
+    { title: 'Mount Lai Jade Facial Sculpting Roller', brand: 'Nordic Lab', price: 34 },
+    { title: 'Le Labo Santal 33 Eau de Parfum 50ml', brand: 'Nordic Lab', price: 230 },
+    { title: 'Muji Ultrasonic Essential Oil Diffuser', brand: 'Minimalist Co.', price: 69 },
+    { title: 'The Ordinary Niacinamide 10% + Zinc', brand: 'Nordic Lab', price: 12 },
+    { title: 'Byredo Black Saffron Hand Wash 450ml', brand: 'Nordic Lab', price: 65 },
+    { title: 'Augustinus Bader The Rich Cream 50ml', brand: 'Nordic Lab', price: 290 },
+    { title: 'Grown Alchemist Hydra-Repair Cream', brand: 'Nordic Lab', price: 49 },
+    { title: 'Diptyque Philosykos Eau de Parfum', brand: 'Nordic Lab', price: 220 },
+    { title: 'Maison Margiela REPLICA Jazz Club', brand: 'Nordic Lab', price: 160 },
+    { title: 'Byredo Gypsy Water Eau de Parfum 50ml', brand: 'Nordic Lab', price: 205 },
+    { title: 'Glossier Boy Brow Volumizing Pomade', brand: 'Nordic Lab', price: 20 },
+    { title: 'Drunk Elephant Protini Polypeptide Cream', brand: 'Nordic Lab', price: 68 },
+    { title: 'Sunday Riley Good Genes Lactic Acid', brand: 'Nordic Lab', price: 85 },
+    { title: 'Tatcha The Water Cream Oil-Free 50ml', brand: 'Nordic Lab', price: 70 },
+    { title: 'SK-II Facial Treatment Essence 230ml', brand: 'Nordic Lab', price: 245 },
+    { title: 'Paula\'s Choice BHA 2% Liquid Exfoliant', brand: 'Nordic Lab', price: 35 },
+    { title: 'Charlotte Tilbury Magic Cream 50ml', brand: 'Nordic Lab', price: 100 },
+    { title: 'Kiehl\'s Ultra Facial Cream 125ml', brand: 'Nordic Lab', price: 67 },
+    { title: 'Chanel Chance Eau Tendre Eau de Parfum', brand: 'Nordic Lab', price: 165 },
+    { title: 'Tom Ford Black Orchid Eau de Parfum', brand: 'Nordic Lab', price: 195 },
+    { title: 'Jo Malone Wood Sage & Sea Salt Cologne', brand: 'Nordic Lab', price: 155 },
+    { title: 'DIPTYQUE Tam Dao Eau de Parfum 75ml', brand: 'Nordic Lab', price: 230 },
+    { title: 'Frederic Malle Portrait of a Lady 50ml', brand: 'Nordic Lab', price: 295 }
+  ],
+  'Office': [
+    { title: 'Grovemade Wool Felt Desk Pad Large', brand: 'AURA Studio', price: 70 },
+    { title: 'Rain Design mStand Aluminium Stand', brand: 'Minimalist Co.', price: 45 },
+    { title: 'Yamazaki Home Steel Desk Cable Box', brand: 'Minimalist Co.', price: 38 },
+    { title: 'Ugmonk Solid Steel Pen Holder & Tray', brand: 'AURA Studio', price: 48 },
+    { title: 'Elgato Stream Deck MK.2 Controller', brand: 'AURA Studio', price: 149 },
+    { title: 'Kanto S2 Desktop Speaker Stands Pair', brand: 'Bang & Olufsen', price: 39 },
+    { title: 'Twelve South BookArc Mac Stand', brand: 'Minimalist Co.', price: 59 },
+    { title: 'Oakywood Solid Walnut Monitor Riser', brand: 'Nordic Lab', price: 129 },
+    { title: 'Herman Miller Ollin Monitor Arm', brand: 'Herman Miller', price: 295 },
+    { title: 'BenQ ScreenBar Halo Monitor Light Bar', brand: 'SONY', price: 179 },
+    { title: 'Logitech MX Master 3S Wireless Mouse', brand: 'AURA Studio', price: 99 },
+    { title: 'Keychron Q1 Pro Wireless Keyboard', brand: 'AURA Studio', price: 199 },
+    { title: 'CalDigit TS4 Thunderbolt 4 Hub Dock', brand: 'AURA Studio', price: 399 },
+    { title: 'Ember Temperature Control Smart Mug 2', brand: 'Minimalist Co.', price: 149 },
+    { title: 'Roost V3 Portable Ultra-Light Stand', brand: 'Minimalist Co.', price: 89 },
+    { title: 'Satechi Type-C Aluminium Stand & Hub', brand: 'Minimalist Co.', price: 99 },
+    { title: 'Anker Work B600 Video Bar Camera', brand: 'SONY', price: 219 },
+    { title: 'Audioengine DS2 Desktop Speaker Wedge', brand: 'Bang & Olufsen', price: 34 },
+    { title: 'Steelcase Gesture Ergonomic Office Chair', brand: 'Herman Miller', price: 1390 },
+    { title: 'Fully Jarvis Bamboo Standing Desk 160', brand: 'Nordic Lab', price: 749 },
+    { title: 'Knoll Generation Ergonomic Task Chair', brand: 'Herman Miller', price: 980 },
+    { title: 'Vitra Physix Office Chair Net Weave', brand: 'Herman Miller', price: 890 },
+    { title: 'Humanscale Freedom Task Chair Gel Arm', brand: 'Herman Miller', price: 1150 },
+    { title: 'Ergotron LX Desk Monitor Arm Heavy', brand: 'Minimalist Co.', price: 189 }
+  ],
+  'Kitchen': [
+    { title: 'Le Creuset Enameled Dutch Oven 5.5Qt', brand: 'Minimalist Co.', price: 420 },
+    { title: 'Shun Classic 8" Japanese Chef Knife', brand: 'Minimalist Co.', price: 169 },
+    { title: 'Fellow Stagg EKG Electric Gooseneck', brand: 'AURA Studio', price: 165 },
+    { title: 'Chemex 8-Cup Classic Glass Maker', brand: 'Minimalist Co.', price: 49 },
+    { title: 'Zassenhaus Cast Iron Pepper Grinder', brand: 'Minimalist Co.', price: 55 },
+    { title: 'Staub Cast Iron Skillet Pan 11"', brand: 'Minimalist Co.', price: 220 },
+    { title: 'Zwilling Damascus Santoku Knife 7"', brand: 'Minimalist Co.', price: 189 },
+    { title: 'Alessi Plissé Electric Water Kettle 1L', brand: 'Minimalist Co.', price: 115 },
+    { title: 'Vitamix A3500 Ascent Series Blender', brand: 'Minimalist Co.', price: 649 },
+    { title: 'Breville Barista Touch Impress Machine', brand: 'Minimalist Co.', price: 1499 },
+    { title: 'Moccamaster KBGV Select Coffee Maker', brand: 'Minimalist Co.', price: 359 },
+    { title: 'KitchenAid Artisan Stand Mixer 5Qt', brand: 'Minimalist Co.', price: 449 },
+    { title: 'Anova Precision Cooker Pro Sous Vide', brand: 'Minimalist Co.', price: 399 },
+    { title: 'Instant Pot Pro Crisp 8Qt Air Fryer', brand: 'Minimalist Co.', price: 229 },
+    { title: 'De\'Longhi La Specialista Arte Machine', brand: 'Minimalist Co.', price: 699 },
+    { title: 'Sage Smart Oven Air Fryer Convection', brand: 'Minimalist Co.', price: 349 },
+    { title: 'Smeg 50\'s Style 2-Slice Toaster', brand: 'Minimalist Co.', price: 199 },
+    { title: 'Emile Henry Ceramic Oval Baking Dish', brand: 'Minimalist Co.', price: 65 },
+    { title: 'Global Classic 8" Chef Knife G-2', brand: 'Minimalist Co.', price: 119 },
+    { title: 'Miyabi Birchwood SG2 Chef Knife 8"', brand: 'Minimalist Co.', price: 349 },
+    { title: 'Lodge Cast Iron Skillet 12" Pre-Seasoned', brand: 'Minimalist Co.', price: 39 },
+    { title: 'Pyrex Glass Meal Prep Storage 10-Piece', brand: 'Minimalist Co.', price: 35 },
+    { title: 'OXO Good Grips Large Salad Spinner', brand: 'Minimalist Co.', price: 29 },
+    { title: 'Microplane Premium Zester Grater', brand: 'Minimalist Co.', price: 16 }
+  ],
+  'Pets': [
+    { title: 'Wild One Minimalist Ceramic Pet Bowl', brand: 'Nordic Lab', price: 48 },
+    { title: 'Tuft & Needle Orthopedic Dog Bed', brand: 'Nordic Lab', price: 149 },
+    { title: 'Found My Animal Waterproof Leather Leash', brand: 'Nordic Lab', price: 64 },
+    { title: 'Catit Style Felt Quiet Cat Cave Pod', brand: 'Nordic Lab', price: 55 },
+    { title: 'Chris Christensen Grooming Steel Comb', brand: 'Nordic Lab', price: 38 },
+    { title: 'KONG Classic Durable Rubber Dog Toy', brand: 'Nordic Lab', price: 16 },
+    { title: 'Mura Felt Raised Elevated Pet Diner', brand: 'Nordic Lab', price: 78 },
+    { title: 'Fida Heavy Duty Retractable Dog Leash', brand: 'Nordic Lab', price: 26 },
+    { title: 'Furbo 360° Dog Camera Treat Dispenser', brand: 'SONY', price: 209 },
+    { title: 'Litter-Robot 4 Automatic Self-Cleaning', brand: 'Nordic Lab', price: 699 },
+    { title: 'Petkit Eversweet Solo Smart Water Fountain', brand: 'Nordic Lab', price: 45 },
+    { title: 'Kurgo Tru-Fit Smart Car Safety Harness', brand: 'Nordic Lab', price: 39 },
+    { title: 'Ruffwear Front Range All-Day Dog Harness', brand: 'Nordic Lab', price: 49 },
+    { title: 'West Paw Zogoflex Toppl Tough Toy', brand: 'Nordic Lab', price: 22 },
+    { title: 'Outward Hound Fun Feeder Slow Bowl', brand: 'Nordic Lab', price: 18 },
+    { title: 'Earth Rated Dog Poop Bags 270 Count', brand: 'Nordic Lab', price: 15 },
+    { title: 'Sherpa Deluxe Airline Approved Carrier', brand: 'Nordic Lab', price: 58 },
+    { title: 'Snoozer Luxury Cozy Cave Pet Bed', brand: 'Nordic Lab', price: 119 },
+    { title: 'Zee.Dog Neopro Waterproof Dog Collar', brand: 'Nordic Lab', price: 24 },
+    { title: 'Fi Smart Dog Collar Series 3 GPS', brand: 'Nordic Lab', price: 149 },
+    { title: 'Whistle Switch GPS Pet Tracker Band', brand: 'Nordic Lab', price: 179 },
+    { title: 'Whisker City 5-Tier Cat Tree Tower', brand: 'Nordic Lab', price: 165 },
+    { title: 'Royal Canin Size Health Nutrition 30lb', brand: 'Nordic Lab', price: 75 },
+    { title: 'Orijen Amazing Grains Dry Dog Food', brand: 'Nordic Lab', price: 89 }
+  ],
+  'Photography': [
+    { title: 'Leica M11 Rangefinder Digital Camera', brand: 'Leica', price: 8995 },
+    { title: 'Peak Design Carbon Fiber Tripod', brand: 'Leica', price: 649 },
+    { title: 'Fujifilm X100VI Compact Camera Body', brand: 'Leica', price: 1599 },
+    { title: 'Peak Design Everyday Backpack 20L', brand: 'Leica', price: 279 },
+    { title: 'Sony FE 24-70mm F2.8 GM II Lens', brand: 'SONY', price: 2299 },
+    { title: 'B+W 82mm MRC Nano Polarizer Filter', brand: 'Leica', price: 145 },
+    { title: 'Profoto A10 AirTTL Studio Flash', brand: 'Leica', price: 1095 },
+    { title: 'Ona The Bowery Leather Camera Bag', brand: 'Leica', price: 289 },
+    { title: 'Hasselblad X2D 100C Medium Format Body', brand: 'Leica', price: 8199 },
+    { title: 'Canon EOS R5 Mirrorless Camera Body', brand: 'Leica', price: 3399 },
+    { title: 'Nikon Z9 Flagship Mirrorless Body', brand: 'Leica', price: 5499 },
+    { title: 'Sony A7 IV Full Frame Camera Body', brand: 'SONY', price: 2498 },
+    { title: 'Sigma 35mm F1.4 DG DN Art Lens Sony', brand: 'Leica', price: 899 },
+    { title: 'Tamron 28-75mm F2.8 VXD G2 Lens Sony', brand: 'Leica', price: 899 },
+    { title: 'Godox AD200 Pro Pocket Flash Strobe', brand: 'Leica', price: 349 },
+    { title: 'Manfrotto Befree Advanced Carbon Tripod', brand: 'Leica', price: 349 },
+    { title: 'Gitzo Systematic Series 3 Carbon Tripod', brand: 'Leica', price: 1150 },
+    { title: 'Domke F-2 Original Canvas Shoulder Bag', brand: 'Leica', price: 179 },
+    { title: 'Billingham Hadley Pro Camera Bag Canvas', brand: 'Leica', price: 349 },
+    { title: 'SanDisk Extreme Pro 256GB SDXC V90', brand: 'SONY', price: 299 },
+    { title: 'Lexar Professional 2000x 128GB SDXC', brand: 'SONY', price: 169 },
+    { title: 'Pelican 1510 Protector Carry-On Case', brand: 'Leica', price: 249 },
+    { title: 'Rode VideoMic Pro+ Shotgun Mic', brand: 'SONY', price: 299 },
+    { title: 'DJI RS 3 Pro Gimbal Stabilizer Combo', brand: 'SONY', price: 1099 }
+  ],
+  'Automotive': [
+    { title: 'Xiaomi Portable Electric Air Pump 2', brand: 'AURA Studio', price: 59 },
+    { title: 'Chemical Guys Detailing Wash Kit 16-Pcs', brand: 'Minimalist Co.', price: 99 },
+    { title: 'Baseus Magnetic Vent Car Phone Mount', brand: 'AURA Studio', price: 29 },
+    { title: 'Philips GoPure Automotive Air Purifier', brand: 'AURA Studio', price: 149 },
+    { title: 'Meguiar\'s Ultimate Ceramic Liquid Wax', brand: 'Minimalist Co.', price: 28 },
+    { title: 'NOCO Genius BOOST Plus GB40 Starter', brand: 'AURA Studio', price: 99 },
+    { title: 'Abrex Microfiber Car Drying Towel 1200', brand: 'Minimalist Co.', price: 24 },
+    { title: 'Garmin Dash Cam Mini 2 Car Recorder', brand: 'SONY', price: 129 },
+    { title: 'Nextbase 622GW 4K Dash Cam Front', brand: 'SONY', price: 399 },
+    { title: 'CTEK MXS 5.0 Battery Charger 12V', brand: 'AURA Studio', price: 119 },
+    { title: 'Rain-X 2-in-1 Glass Cleaner & Repellent', brand: 'Minimalist Co.', price: 12 },
+    { title: 'Armor All Ultimate Car Care Kit 8-Piece', brand: 'Minimalist Co.', price: 45 },
+    { title: 'Chemical Guys HydroSlick Ceramic Coating', brand: 'Minimalist Co.', price: 39 },
+    { title: 'WeatherTech DigitalFit Custom Floor Mats', brand: 'Minimalist Co.', price: 189 },
+    { title: 'Thule Motion XT Roof Cargo Box XL', brand: 'Minimalist Co.', price: 999 },
+    { title: 'Yakima JetStream Aluminium Roof Bars', brand: 'Minimalist Co.', price: 269 },
+    { title: 'Chemical Guys Leather Cleaner & Serum', brand: 'Minimalist Co.', price: 29 },
+    { title: 'Turtle Wax Hybrid Solutions Ceramic Spray', brand: 'Minimalist Co.', price: 16 },
+    { title: 'AstroAI Digital Tire Pressure Gauge 150', brand: 'AURA Studio', price: 14 },
+    { title: 'Slime Smart Spair Emergency Flat Kit', brand: 'Minimalist Co.', price: 34 },
+    { title: 'Anker Roav Viva Alexa Car Charger Mount', brand: 'AURA Studio', price: 49 },
+    { title: 'Scosche MagicMount Pro Vent Car Stand', brand: 'AURA Studio', price: 24 },
+    { title: 'Resqme Car Escape Emergency Glass Tool', brand: 'Minimalist Co.', price: 15 },
+    { title: 'Lexol Leather Conditioner & Cleaner Kit', brand: 'Minimalist Co.', price: 22 }
+  ],
+  'Music': [
+    { title: 'Pro-Ject Debut Carbon EVO Turntable', brand: 'Bang & Olufsen', price: 599 },
+    { title: 'Audioengine A5+ Wireless Speakers Pair', brand: 'Bang & Olufsen', price: 499 },
+    { title: 'Kanto YU6 Powered Bookshelf Speakers', brand: 'Bang & Olufsen', price: 449 },
+    { title: 'Crosley Hudson Vinyl Record Crate', brand: 'Minimalist Co.', price: 49 },
+    { title: 'Elgato Wave XLR Studio Interface Box', brand: 'AURA Studio', price: 159 },
+    { title: 'Sennheiser HD 600 Open Headphones', brand: 'BOSE', price: 399 },
+    { title: 'Cambridge Audio Alva Duo Phono Preamp', brand: 'Bang & Olufsen', price: 349 },
+    { title: 'Kanto SX26 Desktop Speaker Floor Stands', brand: 'Bang & Olufsen', price: 249 },
+    { title: 'Technics SL-1200MK7 Direct Drive Deck', brand: 'Bang & Olufsen', price: 1099 },
+    { title: 'Klipsch The Fives Powered Speakers Pair', brand: 'Bang & Olufsen', price: 599 },
+    { title: 'KEF LS50 Wireless II Active Speakers', brand: 'Bang & Olufsen', price: 2799 },
+    { title: 'Focal Bathys Wireless ANC Headphones', brand: 'BOSE', price: 699 },
+    { title: 'Beyerdynamic DT 1990 Pro Headphones', brand: 'BOSE', price: 599 },
+    { title: 'Shure SM7B Vocal Dynamic Studio Mic', brand: 'BOSE', price: 399 },
+    { title: 'Universal Audio Volt 276 Studio Interface', brand: 'AURA Studio', price: 299 },
+    { title: 'Focusrite Scarlett 2i2 4th Gen Interface', brand: 'AURA Studio', price: 199 },
+    { title: 'Genelec 8010A Active Studio Monitors Pair', brand: 'Bang & Olufsen', price: 790 },
+    { title: 'Yamaha HS8 Powered Studio Monitor Speaker', brand: 'Bang & Olufsen', price: 399 },
+    { title: 'JBL L100 Classic 3-Way Loudspeakers', brand: 'Bang & Olufsen', price: 4400 },
+    { title: 'NAD C 316BEE V2 Stereo Integrated Amp', brand: 'Bang & Olufsen', price: 449 },
+    { title: 'Denon PMA-600NE Integrated Amplifier', brand: 'Bang & Olufsen', price: 499 },
+    { title: 'Marantz PM6007 Integrated Stereo Amp', brand: 'Bang & Olufsen', price: 699 },
+    { title: 'Rega Planar 3 Precision Turntable', brand: 'Bang & Olufsen', price: 1125 },
+    { title: 'Sonus Faber Lumina II Bookshelf Speakers', brand: 'Bang & Olufsen', price: 1200 }
+  ],
+  'Outdoor': [
+    { title: 'MSR PocketRocket 2 Backpacking Stove', brand: 'Nordic Lab', price: 49 },
+    { title: 'Osprey Atmos AG 50L Hiking Backpack', brand: 'Nordic Lab', price: 270 },
+    { title: 'Helinox Chair Zero Ultralight Chair', brand: 'Nordic Lab', price: 149 },
+    { title: 'Stanley Classic Vacuum Flask 1.4L Green', brand: 'Nordic Lab', price: 45 },
+    { title: 'Goal Zero Nomad 20 Solar Panel Charger', brand: 'AURA Studio', price: 149 },
+    { title: 'Black Diamond Spot 400 Outdoor Headlamp', brand: 'Nordic Lab', price: 49 },
+    { title: 'Nalgene Sustain 32oz Water Bottle', brand: 'Nordic Lab', price: 16 },
+    { title: 'Leatherman Wave Plus Multi-Tool Pliers', brand: 'Nordic Lab', price: 119 },
+    { title: 'Nemo Disco 15 Down Sleeping Bag 800', brand: 'Nordic Lab', price: 349 },
+    { title: 'Big Agnes Copper Spur HV UL2 Tent 2P', brand: 'Nordic Lab', price: 549 },
+    { title: 'Therm-a-Rest NeoAir UberLite Mat', brand: 'Nordic Lab', price: 230 },
+    { title: 'Salomon Quest 4 GORE-TEX Hiking Boots', brand: 'Nordic Lab', price: 230 },
+    { title: 'Arc\'teryx Beta AR GORE-TEX Jacket', brand: 'Nordic Lab', price: 600 },
+    { title: 'Patagonia Down Sweater Hoodie Navy', brand: 'Nordic Lab', price: 329 },
+    { title: 'Jetboil Flash Camping Stove System', brand: 'Nordic Lab', price: 129 },
+    { title: 'Garmin inReach Mini 2 Satellite Tracker', brand: 'SONY', price: 399 },
+    { title: 'BioLite CampStove 2+ Power Generator', brand: 'AURA Studio', price: 149 },
+    { title: 'Sea to Summit Ether Light XT Insulated', brand: 'Nordic Lab', price: 199 },
+    { title: 'Snow Peak Titanium Trek 900 Pot', brand: 'Nordic Lab', price: 58 },
+    { title: 'Primus Kinjia Dual Burner Camp Stove', brand: 'Nordic Lab', price: 219 },
+    { title: 'Katadyn BeFree 1.0L Water Filter Bottle', brand: 'Nordic Lab', price: 44 },
+    { title: 'MSR Hubba Hubba NX 2-Person Tent', brand: 'Nordic Lab', price: 479 },
+    { title: 'YETI Tundra 45 Hard Cooler Desert Tan', brand: 'Nordic Lab', price: 325 },
+    { title: 'Benchmade Bugout Titanium Pocket Knife', brand: 'Nordic Lab', price: 240 }
+  ],
+  'Smart Home': [
+    { title: 'Nanoleaf Lines RGB Light Bars Pack', brand: 'AURA Studio', price: 199 },
+    { title: 'Aqara Smart Home Hub M2 Zigbee 3.0', brand: 'AURA Studio', price: 59 },
+    { title: 'Nest Learning Thermostat 3rd Gen', brand: 'AURA Studio', price: 249 },
+    { title: 'August Wi-Fi Smart Door Lock 4th Gen', brand: 'AURA Studio', price: 229 },
+    { title: 'Awair Element Indoor Air Quality Monitor', brand: 'AURA Studio', price: 299 },
+    { title: 'Philips Hue Smart Dimmer Switch V2', brand: 'AURA Studio', price: 28 },
+    { title: 'Apple HomePod Mini Smart Speaker', brand: 'AURA Studio', price: 99 },
+    { title: 'Eufy Video Doorbell 2K Wireless Hub', brand: 'AURA Studio', price: 179 },
+    { title: 'Arlo Pro 5S 2K Security Camera System', brand: 'AURA Studio', price: 249 },
+    { title: 'Ring Video Doorbell Pro 2 Hardwired', brand: 'AURA Studio', price: 249 },
+    { title: 'Sonos Era 100 Smart Speaker White', brand: 'Bang & Olufsen', price: 249 },
+    { title: 'Ecobee SmartThermostat Premium Voice', brand: 'AURA Studio', price: 249 },
+    { title: 'Schlage Encode Smart Wi-Fi Keypad Lock', brand: 'AURA Studio', price: 299 },
+    { title: 'TP-Link Kasa Smart Plug Power Strip', brand: 'AURA Studio', price: 29 },
+    { title: 'Leviton Decora Smart Wi-Fi Switch 2nd', brand: 'AURA Studio', price: 42 },
+    { title: 'Yale Assure Lock 2 Touch Fingerprint', brand: 'AURA Studio', price: 259 },
+    { title: 'Netatmo Smart Weather Station Indoor', brand: 'AURA Studio', price: 179 },
+    { title: 'Roborock S8 MaxV Ultra Robot Vacuum', brand: 'AURA Studio', price: 1599 },
+    { title: 'iRobot Roomba Combo j7+ Auto Vacuum', brand: 'AURA Studio', price: 999 },
+    { title: 'Lutron Caséta Smart Light Switch Kit', brand: 'AURA Studio', price: 99 },
+    { title: 'Eve Energy Smart Plug Motion Sensor', brand: 'AURA Studio', price: 49 },
+    { title: 'SwitchBot Smart Curtain Rod 3 Motor', brand: 'AURA Studio', price: 89 },
+    { title: 'Samsung SmartThings Station Wireless', brand: 'AURA Studio', price: 79 },
+    { title: 'Google Nest Hub Max 10" Smart Display', brand: 'AURA Studio', price: 229 }
+  ],
+  'Toys': [
+    { title: 'LEGO Architecture Fallingwater Kit', brand: 'Minimalist Co.', price: 180 },
+    { title: 'UGears Mechanical Steam Train Model', brand: 'Minimalist Co.', price: 89 },
+    { title: 'Kaws Companion Vinyl Art Figure', brand: 'Minimalist Co.', price: 380 },
+    { title: 'Makeblock mBot Neo Robot Coding Kit', brand: 'AURA Studio', price: 129 },
+    { title: 'Minimalist Solid Walnut Chess Set', brand: 'Minimalist Co.', price: 195 },
+    { title: 'LEGO Creator Expert Bonsai Tree Set', brand: 'Minimalist Co.', price: 49 },
+    { title: 'Dumas Crafts Wooden Ship Model Kit', brand: 'Minimalist Co.', price: 145 },
+    { title: 'Sphero BOLT App-Enabled Robotic Ball', brand: 'AURA Studio', price: 179 },
+    { title: 'LEGO Star Wars Millennium Falcon 75257', brand: 'Minimalist Co.', price: 169 },
+    { title: 'Bearbrick 400% Art Figure Collectible', brand: 'Minimalist Co.', price: 240 },
+    { title: 'Robotime 3D Wooden Mechanical Globe', brand: 'Minimalist Co.', price: 59 },
+    { title: 'DGT USB e-Board Electronic Chessboard', brand: 'Minimalist Co.', price: 549 },
+    { title: 'Anki Vector 2.0 AI Robot Companion', brand: 'AURA Studio', price: 349 },
+    { title: 'Ravensburger GraviTrax Pro Starter Set', brand: 'Minimalist Co.', price: 79 },
+    { title: 'Hot Wheels Ultimate Garage Super Track', brand: 'Minimalist Co.', price: 110 },
+    { title: 'DJI Tello Mini Drone STEM Coding Kit', brand: 'SONY', price: 99 },
+    { title: 'Snap Circuits Extreme SC-750 Kit', brand: 'AURA Studio', price: 129 },
+    { title: 'Fischertechnik STEM Engineering Set', brand: 'Minimalist Co.', price: 199 },
+    { title: 'Modular Robotics Cubelets Robot Kit', brand: 'AURA Studio', price: 329 },
+    { title: 'Magna-Tiles 100-Piece Clear Colors Set', brand: 'Minimalist Co.', price: 119 },
+    { title: 'Osmo Genius Starter Kit for iPad', brand: 'AURA Studio', price: 99 },
+    { title: 'Cubetto Wooden Screenless Coding Toy', brand: 'AURA Studio', price: 225 },
+    { title: 'Wonder Workshop Dash Robot Coding Toy', brand: 'AURA Studio', price: 149 },
+    { title: 'Prime 3D Metallic Puzzle Sculpture Kit', brand: 'Minimalist Co.', price: 38 }
+  ]
+};
 
-  // Map category to existing products count
-  const categoryCounts = {};
-  categoryNames.forEach(c => {
-    categoryCounts[c] = fullList.filter(p => p.category === c).length;
-  });
-
-  const brands = ['SONY', 'BOSE', 'Herman Miller', 'Leica', 'Bang & Olufsen', 'Nordic Lab', 'Minimalist Co.', 'AURA Studio'];
+// Build 480 Products systematically across 20 categories (24 products per category)
+const generate480Products = () => {
+  const items = [];
+  let idCounter = 1;
 
   categoryNames.forEach(catName => {
     const slug = categorySlugMap[catName];
-    const existingCount = categoryCounts[catName] || 0;
-    const needMore = 8 - existingCount;
-
-    const imgPairs = categoryUniqueImages[catName] || [
-      ['https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80', 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80'],
-      ['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80', 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80'],
-      ['https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80', 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&q=80'],
-      ['https://images.unsplash.com/photo-1580481072645-022f9a6d85d0?w=800&q=80', 'https://images.unsplash.com/photo-1505797149-43b0069ec26b?w=800&q=80']
+    const templates = categoryProductTitles[catName] || [];
+    const imagesList = categoryVerifiedImages[catName] || [
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80',
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80'
     ];
 
-    for (let i = 1; i <= needMore; i++) {
-      const idx = existingCount + i;
-      const pair = imgPairs[(idx - 1) % imgPairs.length];
-      const basePrice = 45 + (nextId * 19) % 350;
-      const oldPrice = Math.round(basePrice * 1.2);
+    for (let i = 0; i < 24; i++) {
+      const template = templates[i] || { title: `${catName} Premium Item ${i + 1}`, brand: 'AURA Studio', price: 150 };
+      const mainImg = imagesList[i % imagesList.length];
+      const secImg = imagesList[(i + 1) % imagesList.length];
 
-      fullList.push({
-        id: nextId,
-        title: `${catName} ${getUniqueName(catName, idx)}`,
+      const basePrice = template.price;
+      const oldPrice = Math.round(basePrice * (1 + (0.12 + (i % 4) * 0.05)));
+      const discount = Math.round(((oldPrice - basePrice) / oldPrice) * 100);
+
+      const isFlashSale = (idCounter % 5 === 0);
+      const isBestseller = (idCounter % 3 === 0);
+      const isNewArrival = (idCounter % 4 === 0);
+
+      items.push({
+        id: idCounter,
+        title: template.title,
         category: catName,
         categorySlug: slug,
-        brand: brands[nextId % brands.length],
         price: basePrice,
         oldPrice: oldPrice,
-        discountPercentage: 16,
-        rating: Number((4.4 + (nextId % 5) * 0.1).toFixed(1)),
-        reviewCount: 45 + (nextId * 7) % 300,
-        soldCount: 120 + (nextId * 17) % 800,
-        stock: 10 + (nextId * 3) % 30,
-        description: `Premium ${catName.toLowerCase()} item crafted with minimalist functional aesthetics and durable engineering.`,
-        images: [pair[0], pair[1], pair[0]],
-        colors: catName === 'Fashion' ? ['#090909', '#F5F5F7', '#86868B'] : ['#090909', '#E4E4E7'],
+        discountPercentage: discount,
+        rating: Number((4.5 + (idCounter % 6) * 0.1).toFixed(1)),
+        reviewCount: 25 + (idCounter * 11) % 450,
+        soldCount: 110 + (idCounter * 29) % 2500,
+        stock: 8 + (idCounter * 3) % 40,
+        brand: template.brand,
+        description: `Authentic ${template.title} engineered with minimalist Scandinavian functional aesthetics and uncompromised durability.`,
+        images: [mainImg, secImg, mainImg],
+        colors: catName === 'Fashion' || catName === 'Accessories' ? ['#090909', '#F5F5F7', '#86868B', '#10B981'] : ['#090909', '#E4E4E7'],
         sizes: catName === 'Fashion' ? ['S', 'M', 'L', 'XL'] : null,
-        specifications: { Material: 'Premium Grade Alloy & Materials', Warranty: '2-Year Official AURA Care' },
+        specifications: {
+          'Brand': template.brand,
+          'Category': catName,
+          'Warranty': '2-Year Official Manufacturer Warranty',
+          'Dispatch': 'Express Global Shipping'
+        },
+        shippingBadge: 'Express Dispatch',
         isFreeShipping: basePrice > 75,
-        isBestseller: (nextId % 3 === 0),
-        isNewArrival: (nextId % 4 === 0),
-        isFlashSale: (nextId % 5 === 0),
-        flashEndTime: (nextId % 5 === 0) ? new Date(Date.now() + 18 * 3600 * 1000).toISOString() : null,
+        isBestseller: isBestseller,
+        isNewArrival: isNewArrival,
+        isFlashSale: isFlashSale,
+        flashEndTime: isFlashSale ? new Date(Date.now() + (12 + (idCounter % 12)) * 3600 * 1000).toISOString() : null,
       });
 
-      nextId++;
+      idCounter++;
     }
   });
 
-  return fullList;
+  return items;
 };
 
-function getUniqueName(cat, idx) {
-  const names = {
-    'Electronics': ['Ultra Charging Stand', 'Port Wireless Hub', 'MagSafe Battery Pack', 'High-Res DAC Amp', 'Pro Display Desk Bar'],
-    'Fashion': ['Tailored Wool Trousers', 'Merino Crewneck Sweater', 'Waterproof Parka Jacket', 'Heavyweight Cotton Hoodie', 'Casual Linen Short'],
-    'Gaming': ['Pro Wireless Mousepad', 'Streamer Microphone Arm', 'Spatial Audio Headset', 'RGB LED Light Bar Duo', 'High-Precision Controller'],
-    'Furniture': ['Minimalist Standing Desk', 'Architectural Side Table', 'Acoustic Office Screen', 'Solid Oak Stool', 'Minimal Ottoman Chair'],
-    'Food & Beverage': ['Ceremonial Uji Matcha Tin', 'Cold Brew Infusion Bottle', 'Botanical Herbal Elixir', 'Fine Espresso Glassware', 'Ethiopian Single-Origin Beans'],
-    'Home Decoration': ['Architectural Table Lamp', 'Aromatic Soy Candle', 'Abstract Linen Wall Tapestry', 'Minimalist Metal Wall Clock', 'Ceramic Matte Flower Vase'],
-    'Crafts': ['Precision Craft Knife', 'Japanese Steel Shears', 'Vegetable Tanned Leather Roll', 'Drafting Ruler Set', 'Artisan Tool Roll Bag'],
-    'Books': ['Minimalist Architecture Monograph', 'Grid Design Systems Manual', 'Typography in Practice', 'Modern Living Spaces Monograph', 'Bauhaus Design History'],
-    'Accessories': ['Full Grain Passport Holder', 'Titanium Key Carabiner', 'Minimalist Cardholder Wallet', 'Leather Laptop Sleeve 16"', 'Matte Black Sunglasses'],
-    'Sports': ['Stainless Steel Hydration Flask', 'Speed Resistance Jump Rope', 'Recovery Foam Roller', 'Smart Weight Dumbbell', 'Non-Slip Rubber Yoga Mat'],
-    'Health & Beauty': ['Facial Sculpting Jade Roller', 'Organic Repairing Night Cream', 'Ultrasonic Aroma Diffuser', 'Pure Squalane Face Oil', 'Botanical Hydrating Serum'],
-    'Office': ['Aluminium Laptop Raiser', 'Cable Management Tray', 'Steel Desktop Pen Holder', 'Document File Organiser', 'Felt Wool Desk Mat'],
-    'Kitchen': ['Gooseneck Electric Kettle', 'Pour Over Coffee Dripper Glass', 'Minimalist Spice Jars Set', 'Cast Iron Dutch Oven Pot', 'Damascus Chef Knife 8"'],
-    'Pets': ['Ergonomic Memory Foam Pet Bed', 'Full Grain Leather Pet Leash', 'Acoustic Quiet Cat Cave', 'Stainless Steel Pet Grooming Brush', 'Stoneware Ceramic Pet Bowl'],
-    'Photography': ['Carbon Fibre Travel Tripod', 'Camera Leather Wrist Strap', 'ND Filter Magnetic Set', 'Waterproof Camera Backpack', 'Leica Rangefinder Camera'],
-    'Automotive': ['Microfibre Detailing Kit', 'Magnetic Vent Car Mount', 'Cabin Air Purifier Ioniser', 'Detailing Spray Wax', 'Smart Tyre Inflator Pump'],
-    'Music': ['Active Studio Monitor Speakers', 'Vinyl Record Storage Rack', 'Acoustic Foam Wall Panels', 'High-Res DAC Converter', 'Audiophile Turntable Deck'],
-    'Outdoor': ['Waterproof Trail Backpack 30L', 'Compact Ultralight Camping Chair', 'Insulated Thermos Flask', 'Solar Power Charger 20W', 'Titanium Backpacking Stove'],
-    'Smart Home': ['Zigbee Home Sensor Pack', 'Thermostat Smart Controller', 'Smart Touch Door Lock', 'Air Quality Monitor Sensor', 'Ambient Light Bar Duo'],
-    'Toys': ['Mechanical Wooden Clock Kit', 'Collectible Vinyl Art Figure', 'Robotic Coding Starter Kit', 'Minimalist Walnut Chess Set', 'Wooden Architectural Blocks']
-  };
-  const list = names[cat] || ['Edition Model', 'Series Pro', 'Design Version'];
-  return list[(idx - 1) % list.length];
-}
-
-export const products = generate160Products();
+export const products = generate480Products();
