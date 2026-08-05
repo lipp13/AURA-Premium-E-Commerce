@@ -2,10 +2,11 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal } from '../common/Modal';
 import { Search, X, TrendingUp, ArrowRight, Star } from 'lucide-react';
-import { products } from '../../data/products';
+import { useProducts } from '../../hooks/useProducts';
 import { categories } from '../../data/categories';
 
 export const SearchModal = ({ isOpen, onClose }) => {
+  const { products } = useProducts();
   const [query, setQuery] = useState('');
 
   const trendingSearches = ['Headphones', 'OLED Display', 'Ergonomic Chair', 'Keyboard', 'Cashmere', 'Bang & Olufsen'];

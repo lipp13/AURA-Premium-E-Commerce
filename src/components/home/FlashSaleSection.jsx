@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { products } from '../../data/products';
+import { useProducts } from '../../hooks/useProducts';
 import { ProductCard } from '../product/ProductCard';
 import { Zap, Timer } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const FlashSaleSection = () => {
+  const { products } = useProducts();
   const flashProducts = products.filter(p => p.isFlashSale).slice(0, 4);
 
   const [timeLeft, setTimeLeft] = useState({ hours: 14, minutes: 32, seconds: 45 });

@@ -8,11 +8,12 @@ import { Testimonials } from '../components/home/Testimonials';
 import { FAQSection } from '../components/home/FAQSection';
 import { NewsletterSection } from '../components/home/NewsletterSection';
 import { ProductGrid } from '../components/product/ProductGrid';
-import { products } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const HomePage = () => {
+  const { products, loading } = useProducts();
   const [tab, setTab] = useState('featured');
 
   const featuredProducts = products.filter(p => p.isBestseller).slice(0, 8);

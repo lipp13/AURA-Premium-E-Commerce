@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { products } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
 import { categories } from '../data/categories';
 import { brands } from '../data/brands';
 import { ProductGrid } from '../components/product/ProductGrid';
@@ -10,6 +10,7 @@ import { LayoutGrid, List, SlidersHorizontal, X, RotateCcw, ChevronDown } from '
 import { Button } from '../components/common/Button';
 
 export const ShopPage = () => {
+  const { products, loading, error } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Layout mode: 'grid' or 'list'

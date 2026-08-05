@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { products } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { Button } from '../components/common/Button';
 import { Badge } from '../components/common/Badge';
@@ -13,9 +13,10 @@ import { useToast } from '../context/ToastContext';
 import { Star, ShoppingBag, Heart, ShieldCheck, Truck, RefreshCw, Check, Plus, Scale } from 'lucide-react';
 
 export const ProductDetailPage = () => {
+  const { products } = useProducts();
   const { id } = useParams();
   const navigate = useNavigate();
-  const product = products.find(p => p.id === Number(id)) || products[0];
+  const product = products.find(p => String(p.id) === String(id)) || products[0];
 
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
