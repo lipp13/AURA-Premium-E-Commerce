@@ -7,10 +7,10 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -24,17 +24,22 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 overflow-hidden">
+        <motion.div
+          key="drawer-wrapper"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-50 overflow-hidden"
+        >
           {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <div
             onClick={onClose}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm"
           />
           {/* Drawer Container */}
           <motion.div
+            key="drawer-panel"
             initial={slideVariants[position].initial}
             animate={slideVariants[position].animate}
             exit={slideVariants[position].exit}
@@ -46,6 +51,7 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
                 {title}
               </h3>
               <button
+                type="button"
                 onClick={onClose}
                 className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
               >
@@ -54,7 +60,7 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
             </div>
             <div className="flex-1 overflow-y-auto p-6">{children}</div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
