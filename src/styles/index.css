@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-[#090909] text-neutral-900 dark:text-neutral-100 font-sans antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-800 rounded-full hover:bg-neutral-400 dark:hover:bg-neutral-700 transition-colors;
+}
+
+/* Apple-style Glassmorphism */
+.glass-panel {
+  @apply bg-white/75 dark:bg-[#090909]/75 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/80;
+}
+
+.glass-nav {
+  @apply bg-white/80 dark:bg-[#090909]/80 backdrop-blur-md border-b border-neutral-200/60 dark:border-neutral-800/60;
+}
+
+.glass-card {
+  @apply bg-white/60 dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
