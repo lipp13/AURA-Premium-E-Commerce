@@ -45,8 +45,7 @@ export const AuthProvider = ({ children }) => {
         console.error('Error parsing stored current user:', e);
       }
     }
-    // Default logged in user for instant preview experience if desired, or null
-    return DEFAULT_USERS[0];
+    return null;
   });
 
   // Auth modal state
