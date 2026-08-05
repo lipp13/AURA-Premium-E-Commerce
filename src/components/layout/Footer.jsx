@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ShieldCheck, Truck, RefreshCw, Headphones } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck, Truck, RefreshCw, Headphones, Code2 } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -51,12 +51,9 @@ export const Footer = () => {
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
         
-        {/* Brand Column */}
+        {/* Brand & Creator Column */}
         <div className="col-span-2 space-y-4">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 flex items-center justify-center font-bold text-sm">
-              A
-            </div>
             <span className="text-xl font-bold tracking-tighter text-neutral-900 dark:text-white">
               AURA
             </span>
@@ -64,8 +61,9 @@ export const Footer = () => {
           <p className="text-sm leading-relaxed max-w-sm text-neutral-500 dark:text-neutral-400">
             A minimalist e-commerce platform designed around pure function, timeless aesthetics, and uncompromising engineering.
           </p>
-          <div className="pt-2 text-xs text-neutral-400">
-            Designed with Apple design principles in Stockholm & California.
+          <div className="pt-2 text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5 font-medium">
+            <Code2 className="w-3.5 h-3.5 text-neutral-700 dark:text-neutral-300" />
+            <span>Designed & Developed with ❤️ by <a href="https://github.com/lipp13" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-900 dark:text-white underline hover:opacity-80 transition-opacity">Alif Alfathar</a></span>
           </div>
         </div>
 
@@ -114,15 +112,30 @@ export const Footer = () => {
 
       {/* Bottom bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
-        <p>© 2026 AURA Inc. All rights reserved.</p>
+        <p>© 2026 AURA Inc. All rights reserved. • Dev by <a href="https://github.com/lipp13" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-900 dark:text-white hover:underline">Alif Alfathar</a></p>
         <div className="flex items-center gap-6">
-          <a href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1">
+          <a
+            href="https://www.instagram.com/alfthrr13/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1 font-semibold"
+          >
             Instagram <ArrowUpRight className="w-3 h-3" />
           </a>
-          <a href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1">
-            Twitter / X <ArrowUpRight className="w-3 h-3" />
+          <a
+            href="https://github.com/lipp13"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1 font-semibold"
+          >
+            GitHub <ArrowUpRight className="w-3 h-3" />
           </a>
-          <a href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1">
+          <a
+            href="https://www.linkedin.com/in/alif-alfathar-183402407/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-1 font-semibold"
+          >
             LinkedIn <ArrowUpRight className="w-3 h-3" />
           </a>
         </div>
