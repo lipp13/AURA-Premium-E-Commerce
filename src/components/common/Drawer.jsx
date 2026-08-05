@@ -14,6 +14,12 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
     };
   }, [isOpen]);
 
+  const handleClose = (e) => {
+    if (e) e.stopPropagation();
+    document.body.style.overflow = '';
+    onClose();
+  };
+
   const slideVariants = {
     right: { initial: { x: '100%' }, animate: { x: 0 }, exit: { x: '100%' } },
     left: { initial: { x: '-100%' }, animate: { x: 0 }, exit: { x: '-100%' } },
@@ -28,13 +34,13 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
           key="drawer-wrapper"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          exit={{ opacity: 0, pointerEvents: 'none' }}
+          transition={{ duration: 0.15 }}
           className="fixed inset-0 z-50 overflow-hidden"
         >
           {/* Backdrop */}
           <div
-            onClick={onClose}
+            onClick={handleClose}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm"
           />
           {/* Drawer Container */}
@@ -42,7 +48,7 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
             key="drawer-panel"
             initial={slideVariants[position].initial}
             animate={slideVariants[position].animate}
-            exit={slideVariants[position].exit}
+            exit={{ ...slideVariants[position].exit, pointerEvents: 'none' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className={`fixed inset-y-0 ${posClass} max-w-md w-full bg-white dark:bg-[#090909] border-l border-neutral-200 dark:border-neutral-800 shadow-apple-lg z-10 flex flex-col`}
           >
@@ -52,7 +58,7 @@ export const Drawer = ({ isOpen, onClose, title, children, position = 'right' })
               </h3>
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleClose}
                 className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-500 hover:text-neutral-900 dark:hover:text-white"
               >
                 <X className="w-5 h-5" />
